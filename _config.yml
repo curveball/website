@@ -1,0 +1,56 @@
+# Dependencies
+markdown:	kramdown
+# Permalinks
+permalink:	/blog/:title
+
+# Setup
+title:            Curveball
+tagline:          'A framework that rips'
+description:      'A javascript framework for building webservices in Node.js'
+url:              http://curveballjs.org
+baseurl:          
+commentsystem:    google
+disqus:           example
+
+author:
+  name:           Evert Pot
+  url:            https://evertpot.com
+
+paginate:         5
+
+# Custom vars
+icon:             /assets/images/logo.svg
+cover:            /assets/images/cover-3.jpg
+
+social:
+  # - icon:         twitter
+  #   url:          https://twitter.com/curveballjs
+  #   desc:         Follow me on twitter
+
+  - icon:         github
+    url:          https://github.com/curveballjs
+    desc:         Fork me on github
+
+  - icon:         feed
+    url:          http://curveballjs.org/atom.xml
+    desc:         Subscribe to my feed
+
+menu:
+  - title:        Home
+    url:          /
+
+  - title:        About
+    url:          /about
+
+copyright:
+  author:         Curveball
+  url:            http://curbeballjs.github.io
+  type_title:     Some rights reserved
+
+parallax:         false
+
+# Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
+google_analytics:  
+
+# Default Theme Color for Chrome on Android Lollipop (Use RGB ColorCode without `#`, e.g.: `db5945`)
+theme_color:       7E9576
