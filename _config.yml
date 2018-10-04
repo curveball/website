@@ -9,8 +9,6 @@ tagline:          'A framework that rips'
 description:      'A javascript framework for building webservices in Node.js'
 url:              http://curveballjs.org
 baseurl:          
-commentsystem:    google
-disqus:           example
 
 author:
   name:           Evert Pot
@@ -46,8 +44,6 @@ copyright:
   author:         Curveball
   url:            http://curbeballjs.github.io
   type_title:     Some rights reserved
-
-parallax:         false
 
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
 google_analytics:  
