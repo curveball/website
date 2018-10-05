@@ -256,6 +256,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages (>= 28)
   html-proofer (>= 1.4.0)
+  jekyll-sass-converter
 
 BUNDLED WITH
    1.16.4

@@ -16,6 +16,8 @@ author:
 
 paginate:         5
 
+include: ['_sass', '*.scss']
+
 # Custom vars
 icon:             /assets/images/logo.svg
 cover:            /assets/images/cover-3.jpg
