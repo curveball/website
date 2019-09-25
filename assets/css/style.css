@@ -1,0 +1,39 @@
+/*
+Error: Invalid CSS after "...sass/menu.scss"": expected "{", was ";"
+        on line 3 of assets/css/style.scss
+
+1: ---
+2: ---
+3: @import "../../_sass/menu.scss";
+4: @import "../../_sass/desktop.scss";
+5: @import "../../_sass/mobile.scss";
+6: @import "../../_sass/syntax.scss";
+7: @import "../../_sass/genericons.scss";
+8: 
+
+Backtrace:
+assets/css/style.scss:3
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1238:in `expected'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1233:in `tok!'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:688:in `block'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:681:in `ruleset'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:707:in `block_child'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:697:in `block_contents'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `stylesheet'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:41:in `parse'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+/var/lib/gems/2.5.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...sass/menu.scss\"\": expected \"{\", was \";\"\A         on line 3 of assets/css/style.scss\A \A 1: ---\A 2: ---\A 3: @import \"../../_sass/menu.scss\";\A 4: @import \"../../_sass/desktop.scss\";\A 5: @import \"../../_sass/mobile.scss\";\A 6: @import \"../../_sass/syntax.scss\";\A 7: @import \"../../_sass/genericons.scss\";\A 8: "; }
