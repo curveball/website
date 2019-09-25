@@ -9,7 +9,7 @@ title: Home
 		<a class="logo" href="{{ site.url }}{{ site.baseurl }}">
 			<img src="{{ site.icon }}">
 		</a>
-		<h1>Curveball is a framework for building web services in Node.js</h1>
+		<h1>Curveball is a framework for building APIs in Node.js</h1>
 		<ul class="actions">
 			<li><a href="#install" class="button primary icon fa-download"><span class="genericon genericon-cloud-download"></span> Install</a></li>
 			<li><a href="#about" class="button"><span class="genericon genericon-expand"></span> Learn More</a></li>
@@ -19,11 +19,20 @@ title: Home
 
 <section id="about" class="wrapper special">
 	<header class="major">
-		<h2>Curveball is a framework for building web services in Node.js.<br>
-		It fullfills a similar role to <a href="https://expressjs.com/" title="Express" rel="nofollow">Express</a> and it's heavily inspired by <a href="https://koajs.com/" title="Koa" rel="nofollow">Koa</a>.
+		<h2>Curveball is a framework for building APIs in Node.js.<br>
+		Curveball makes it easy to build developer-friendly HTTP APIs that are simple and robust.
 		</h2>
 	</header>
 	<h2>🧢 🧢 🧢</h2>
+        <p>
+          Curveball's design goals are as follows:
+          <ul>
+            <li><strong>A small core.</strong> Curveball is a micro-framework.</li>
+            <li><strong>Modern Javascript.</strong> No more callbacks in places where async/await may be used.</li>
+            <li><strong>Gets HTTP.</strong> Curveball has solid APIs in its core make it natural to work with modern features such as HTTP/2 Push, Content-Negortion, the Prefer header and Links headers.</li>
+            <li><strong>Quality control friendly.</strong> Curveball is written in Typescript and encourages mostly stateles functional programming. TCP sockets are completely abstracted away, making it possible to test and run parts of your application without going through a HTTP server.</li>
+          </u>
+        </p>
 </section>
 <section id="install" class="wrapper">
 	<div class="inner">
