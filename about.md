@@ -60,9 +60,9 @@ app.use((ctx: Context) => {
 Middlewares you might want
 --------------------------
 
-* [Router](https://github.com/curveballjs/router).
-* [Body Parser](https://github.com/curveballjs/bodyparser).
-* [Sessions](https://github.com/curveballjs/session).
+* [Router](https://github.com/curveball/router).
+* [Body Parser](https://github.com/curveball/bodyparser).
+* [Sessions](https://github.com/curveball/session).
 
 
 Project status
