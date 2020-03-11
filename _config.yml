@@ -15,7 +15,7 @@ permalink:	/blog/:title
 title:            Curveball
 tagline:          'A framework that rips'
 description:      'A javascript framework for building webservices in Node.js'
-url:              http://curveballjs.org
+url:              https://curveballjs.org
 baseurl:          
 
 author:
@@ -23,6 +23,10 @@ author:
   url:            https://evertpot.com
 
 include: ['_sass', '*.scss']
+
+copyright:
+  author:         Curveball
+  url:            https://github.com/curveball
 
 # Custom vars
 icon:             /assets/images/logo.svg
