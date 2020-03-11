@@ -22,8 +22,6 @@ author:
   name:           Evert Pot
   url:            https://evertpot.com
 
-paginate:         5
-
 include: ['_sass', '*.scss']
 
 # Custom vars
