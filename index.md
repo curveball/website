@@ -219,7 +219,7 @@ app.use(halBrowser());
 Once set up, your API will start rendering HTML when accessed by a browser.
 
 <figure>
-  <img src="/assets/posts/hal-browser.png" alt="HAL browser example" />
+  <img src="/assets/images/hal-browser.png" alt="HAL browser example" />
 </figure>
 
 
