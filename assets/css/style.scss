@@ -12,7 +12,6 @@
 html, body, div, span, applet, object, iframe, caption, p {
 	margin: 0;
 	border: 0;
-	font: inherit;
 	color: inherit;
 }
 
@@ -23,8 +22,7 @@ html, body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #828282;
 	font-size: 13pt;
-    line-height: 1.7em;
-    font-weight: 100;
+        line-height: 1.7em;
 	letter-spacing: -0.015em;
 	scroll-behavior: smooth;
 }
@@ -74,6 +72,19 @@ h3,
 h4 {
 	line-height: 1.7em;
 	font-weight: 200;
+}
+
+ul {
+  list-style: "⚾";
+  margin-left: 10px;
+}
+
+ul li {
+  padding-left: 10px;
+}
+
+#about h3 {
+  text-align: center;
 }
 
 #post-info {
@@ -136,15 +147,32 @@ h4 {
 
 ul.actions {
 	list-style: none;
+        padding: 0;
+        margin: 0;
 }
 ul.actions li {
     display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.actions .button {
+  width: 200px;
 }
 
 .button-group {
 	text-align: right;
 	
 	padding: 1em 0;
+}
+
+#examples h3 {
+  padding-top: 40px;
+}
+
+#examples .highlight {
+  padding: 40px;
+  border-radius: 3px;
 }
 
 .button {

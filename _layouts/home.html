@@ -1,0 +1,101 @@
+---
+layout: default
+title: Home
+---
+<header class="hero">
+	{% include top.html %}
+	<div class="poster">
+		<a class="logo" href="{{ site.url }}{{ site.baseurl }}">
+			<img src="{{ site.icon }}">
+		</a>
+		<h1>Curveball is a micro-framework for building APIs with Typescript</h1>
+		<ul class="actions">
+			<li><a href="#install" class="button primary icon fa-download"><span class="genericon genericon-cloud-download"></span> Install</a></li>
+			<li><a href="#about" class="button"><span class="genericon genericon-expand"></span> Learn More</a></li>
+		</ul>
+	</div>
+</header>
+
+<section id="about" class="wrapper">
+        <div class="inner">
+          <header class="major">
+                  <h2>Curveball is a framework for building APIs in Node.js.<br>
+                  Curveball makes it easy to build developer-friendly HTTP APIs that are simple and robust.
+                  </h2>
+          </header>
+          <p>
+            <h3>Design goals</h3>
+            <ul>
+              <li><strong>A small core.</strong> Curveball is a micro-framework.</li>
+              <li><strong>Batteries included.</strong> Optional plugins for lots of common tasks.</li>
+              <li><strong>Gets HTTP.</strong> Use  modern features such as HTTP/2 Push, Content-Negotation, 1xx responses, the Prefer header and Links headers.</li>
+              <li><strong>Serverless friendly.</strong> Built-in AWS Lambda support.</li>
+            </u>
+          </p>
+        </div>
+</section>
+<section id="install" class="wrapper">
+	<div class="inner">
+		<header class="major">
+			<h2>Installation</h2>
+		</header>
+		<pre><code>npm install @curveball/core</code></pre>
+	</div>
+
+</section>
+<section id="status" class="wrapper special cta">
+	<header class="major">
+		<h2>Project status</h2>
+		<p>Curveball is currently in Beta. It's close to a stable release, and any API changes will be minor. It's ready for production.</p>
+	</header>
+	<ul class="actions">
+		<li><a class="button" href="https://github.com/curveball/core" target="_blank" rel="noopener"><span class="genericon genericon-phone"></span> Documentation</a></li>
+		<li><a class="button primary icon" href="https://github.com/curveball/starter" target="_blank" rel="noopener"> Starter template <span class="genericon genericon-code"></span> </a></li>
+	</ul>
+</section>
+<section id="examples" class="wrapper">
+	<div class="inner">
+
+		<header class="major">
+			<h2>Code samples</h2>
+		</header>
+
+		<section>
+                    {{ content}}
+		</section>
+	</div>
+</section>
+
+<!-- posts? -->
+
+<div id="middle">
+	<div id="post-list">
+		{% for post in paginator.posts %}
+			<div>
+				<span class="post-date">{{ post.date | date_to_long_string }}</span>
+				<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+				<p class="post-description">{% if post.quote %}{{ post.quote }}{% else %}{{ post.content | strip_html | truncatewords: 50 }}{% endif %}</p>
+			</div>
+			<br>
+		{% endfor %}
+	</div>
+	<!-- 
+	<nav class="pagination" role="navigation">
+		{% if paginator.next_page %}
+			<a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">&larr; Older posts</a>
+		{% endif %}
+		<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+		{% if paginator.previous_page %}
+			{% if paginator.page == 2 %}
+				<a class="older-posts" href="{{ site.baseurl }}/">Newer posts &rarr;</a>
+			{% else %}
+				<a class="older-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer posts &rarr;</a>
+			{% endif %}
+		{% endif %}
+	</nav>
+	 -->
+</div>
+
+<footer>
+	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>
+</footer>
