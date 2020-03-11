@@ -3,8 +3,8 @@
 	<link rel="canonical" href="{{ canonical }}" />
 	<meta name="description" content="{% if page.quote %}{{ page.quote }}{% else %}{{ page.content | strip_html | truncatewords: 20 }}{% endif %}" />
 	<meta property="og:description" content="{% if page.quote %}{{ page.quote }}{% else %}{{ page.content | strip_html | truncatewords: 20 }}{% endif %}" />
-	<meta itemprop="image" content="{% if page.image.url %}{{ site.url }}{{ site.baseurl }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.icon }}{% endif %}" />
-	<meta property="og:image" content="{% if page.image.url %}{{ site.url }}{{ site.baseurl }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.icon }}{% endif %}" />
+	<meta itemprop="image" content="{% if page.image.url %}{{ site.baseurl }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.icon }}{% endif %}" />
+	<meta property="og:image" content="{% if page.image.url %}{{ site.baseurl }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.icon }}{% endif %}" />
 	<meta property="og:title" content="{{ page.title }}" />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="{{ canonical }}" />
@@ -14,9 +14,9 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" />
-	<link rel="apple-touch-icon" href="{{ site.url }}{{ site.baseurl }}{{ site.icon }}">
-	<link rel="shortcut icon" href="{{ site.url }}{{ site.baseurl }}/assets/images/favicon.ico">
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}{{ site.baseurl }}/atom.xml">
+	<link rel="apple-touch-icon" href="{{ site.baseurl }}{{ site.icon }}">
+	<link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.baseurl }}/atom.xml">
 	
 	{% if site.google_analytics %}
 	<!-- Asynchronous Google Analytics snippet -->

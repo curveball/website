@@ -38,7 +38,7 @@ social:
     desc:         Fork me on github
 
   - icon:         feed
-    url:          http://curveballjs.org/atom.xml
+    url:          https://curveballjs.org/atom.xml
     desc:         Subscribe to my feed
 
 menu:
@@ -47,11 +47,6 @@ menu:
 
   - title:        About
     url:          /about
-
-copyright:
-  author:         Curveball
-  url:            http://curbeballjs.github.io
-  type_title:     Some rights reserved
 
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
 google_analytics:  
