@@ -38,7 +38,7 @@ social:
   #   desc:         Follow me on twitter
 
   - icon:         github
-    url:          https://github.com/curveballjs
+    url:          https://github.com/curveballjs/core
     desc:         Fork me on github
 
   - icon:         feed
