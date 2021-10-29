@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
-.menu a:hover {
-  -webkit-opacity: 0.75;
-  opacity: 0.75;
+:root {
+  --red: #FE4D61; /*red from logo*/
+  --blue: rgb(76, 226, 228);
+  --navy: #1d1e3a;
+}
+
+.menu:hover > span, .menu:focus > span, .menu:focus-within > span {
+  color: var(--blue);
 }
 
 .menu {
@@ -30,7 +35,7 @@
 
 .menu-content {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #1d1e3a;
+  background-color: var(--navy);
   text-align: center;
   z-index: 5;
 }
@@ -49,7 +54,7 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-.menu-content a:hover {
+.menu-content a:hover, .menu-content a:focus {
   color: #fff;
 }
 
@@ -63,15 +68,16 @@
   line-height: 30px;
 }
 
-.menu + input {
+.menu input {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu input + * {
   display: none;
 }
 
-.menu + input + * {
-  display: none;
-}
-
-.menu + input:checked + * {
+.menu input:checked + * {
   display: block;
 }
 
@@ -435,6 +441,10 @@
   *overflow: auto;
   *zoom: 1;
   *display: inline;
+}
+
+a:not(.button):hover .genericon, a:not(.button):focus .genericon {
+  color: var(--blue);
 }
 
 /**
@@ -981,7 +991,7 @@ header.hero {
 }
 
 footer {
-  background: rgba(29, 30, 58, 0.47);
+  background: var(--navy);
   color: #ffffffaa;
   border: 1px solid transparent;
   padding: 3em 0;
@@ -997,9 +1007,18 @@ p {
   font-weight: 200;
 }
 
+p a {
+  text-decoration: underline;
+  color: var(--red)
+}
+
 a {
-  color: #ff4e60;
+  color: var(--red);
   text-decoration: none;
+}
+
+a:focus-visible, a:focus {
+  outline-color: var(--red);
 }
 
 h1,
@@ -1100,6 +1119,8 @@ ul.actions .button {
 
 #examples h3 {
   padding-top: 40px;
+  font-weight: 500;
+  color: var(--navy);
 }
 
 #examples h3:not(:first-of-type) {
@@ -1148,15 +1169,24 @@ ul.actions .button {
 
 .button {
   background-color: transparent;
-  color: #46e1e4;
-  box-shadow: inset 0 0 0 2px rgba(70, 225, 228, 0.25);
+  color: var(--blue);
+  box-shadow: inset 0 0 0 2px var(--blue);
+}
+
+.button:hover, .button:focus {
+  color: var(--red);
+  box-shadow: inset 0 0 0 2px var(--red);
 }
 
 .button.primary {
-  box-shadow: 0 0px 0px -2px #46e2e466;
-  background-color: #46e2e4;
+  box-shadow: 0 0px 0px -2px var(--blue);
+  background-color: var(--blue);
   color: #1d1e3a;
-  transition: all 0.5s ease-in-out;
+}
+
+.button.primary:hover, .button.primary:focus {
+  box-shadow: 0 0px 0px -2px var(--red);
+  background-color: var(--red);
 }
 
 .site-icon-small {
@@ -1183,7 +1213,7 @@ section.special h2 {
 
 section.special.cta {
   background-color: #1f1e3a;
-  color: #46e2e4;
+  color: var(--blue);
   background-image: linear-gradient(#1f1e3a 25%, #1f1e3acc), url(../images/cover-3.jpg);
   background-position: bottom;
   background-attachment: fixed;
@@ -1282,7 +1312,7 @@ header.major h2 {
 
 .major a:hover,
 #article a:hover {
-  border-bottom: 2px solid #ff4e60;
+  border-bottom: 2px solid var(--red);
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
@@ -1423,6 +1453,10 @@ pre code {
   color: white;
 }
 
+.social-links a:focus {
+  opacity: 1;
+}
+
 .social-links a span {
   font-size: 24px;
   height: 24px;
@@ -1473,8 +1507,8 @@ pre code {
 }
 
 .older-posts:hover, .newer-posts:hover {
-  color: #ff4e60;
-  border-color: #ff4e60;
+  color: var(--red);
+  border-color: var(--red);
 }
 
 .copyright {
@@ -1513,7 +1547,7 @@ pre code {
 }
 
 #post-list a:hover {
-  color: #ff4e60;
+  color: var(--red);
   text-decoration: none;
 }
 
@@ -1574,7 +1608,7 @@ header, footer {
 }
 
 .menu:hover, .menu:active {
-  background-color: #1d1e3a;
+  /* background-color: #1d1e3a; */
 }
 
 .menu-content {
