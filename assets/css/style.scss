@@ -1,4 +1,5 @@
 @import "../../_sass/menu.scss";
+@import "../../_sass/navbar.scss";
 @import "../../_sass/syntax.scss";
 @import "../../_sass/genericons.scss";
 
@@ -466,33 +467,6 @@ pre code {
 .highlight pre {
    margin-bottom: 0;
 }
-
-.social-links {
-   width: auto;
-   top: 20px;
-   right: 20px;
-   position: absolute;
-   z-index: 2;
-}
-
-.social-links a {
-   opacity: 0.75;
-   text-decoration: none;
-   display: inline-block;
-   margin: 0 5px 0 5px;
-   padding: 0;
-   color: white;
-}
-.social-links a span {
-   font-size: 24px;
-   height: 24px;
-   width: 24px;
-}
-
-.social-links a:hover {
-   opacity: 1;
-}
-
 
 .pagination {
    position: relative;

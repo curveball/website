@@ -3,7 +3,12 @@ title: Home
 layout: home
 ---
 
-### Hello world
+## Installation
+```bash
+$ npm install @curveball/core
+```
+
+## Hello world
 
 ```typescript
 import { Application } from '@curveball/core';
@@ -34,7 +39,7 @@ app.use( ctx => {
 exports.handler = handler(app);
 ```
 
-### HTTP/2 Push
+<!-- ### HTTP/2 Push
 
 ```typescript
 const app = new Application();
@@ -243,4 +248,4 @@ console.log(foo);
 [9]: https://curveballjs.org/
 [10]: https://github.com/curveball/core
 [11]: https://badgateway.net/
-[12]: https://github.com/curveball/a12n-server
+[12]: https://github.com/curveball/a12n-server -->

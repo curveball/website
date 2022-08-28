@@ -47,8 +47,8 @@ menu:
   - title:        Home
     url:          /
 
-  - title:        About
-    url:          /about
+  - title:        Getting Started
+    url:          /getting-started
 
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
 google_analytics:

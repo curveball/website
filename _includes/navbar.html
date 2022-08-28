@@ -1,0 +1,16 @@
+<div class="navbar">
+  <div class="nav-items">
+    {% for item in site.menu %}
+      {% if page.url == item.url %}
+        <a href="{{ item.url }}" class="active">{{ item.title }}</a>
+      {% else %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      {% endif %}
+	  {% endfor %}
+  </div>
+  <div class="social-links" data-stellar-ratio="0.1">
+    {% for social in site.social %}
+      <a href="{{ social.url }}" target="_blank" title="{{ social.desc }}"><span class="genericon genericon-{{ social.icon }}"></span></a>
+    {% endfor %}
+  </div>
+</div>

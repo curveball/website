@@ -1,0 +1,51 @@
+.navbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: rgb(29, 30, 58);
+  overflow: hidden;
+  align-items: center;
+}
+
+.navbar .nav-items {
+  flex: 0 1 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar .nav-items a {
+  color: rgb(255, 255, 255);
+  font-size: 1.1em;
+  padding: 0 20px;
+}
+
+.navbar .nav-items .active {
+  text-decoration: underline;
+  text-decoration-color: #46e2e4;
+  text-decoration-thickness: 0.1em;
+}
+
+.navbar .social-links {
+  flex: 0 1 auto;
+  margin-left: auto;
+}
+
+.navbar .social-links a {
+  margin: 0 5px 0 5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar .social-links a span {
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+}
+
+.navbar .social-links a:hover {
+  opacity: 1;
+}
