@@ -10,6 +10,16 @@ layout: default
 
 <main>
 	<section class="page-container">
+		<nav class="side-nav-container">
+			<div class="side-nav-container">
+				Menu
+				<ul>
+					{% for item in page.nav-links %}
+						<li><a href="/{{page.permalink}}#{{ item.link }}">{{ item.title }}</a>
+					{% endfor %}
+				</ul>
+			</div>
+		</nav>
 		<div class="content-container">
 			{{ content}}
 		</div>

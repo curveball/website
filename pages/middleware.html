@@ -1,0 +1,22 @@
+---
+layout: page
+title: Middleware
+permalink: middleware
+---
+
+<p>
+  Below are a list of the official supported Curveball middleware.
+</p>
+
+<div class="middleware-wrapper">
+  {% for item in site.middleware %}
+  <div class="middleware">
+    <div class="title">
+      {{ item.title }}
+    </div>
+    <div class="description">
+      {{ item.description }}
+    </div>
+  </div>
+  {% endfor %}
+</div>

@@ -50,6 +50,17 @@ menu:
   - title:        Getting Started
     url:          /getting-started
 
+  - title:        Middleware
+    url:          /middleware
+
+  # - title:        Examples
+  #   url:          /examples
+
+collections_dir: collections
+collections:
+  middleware:
+    output: true
+
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
 google_analytics:
 

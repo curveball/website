@@ -1,0 +1,30 @@
+.middleware-wrapper {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.middleware-wrapper .middleware {
+  width: 250px;
+  margin: 10px;
+  // border: 2px solid #46e2e4;
+  border: 1px solid black;
+}
+
+.middleware-wrapper .middleware .title {
+  // color: rgb(29, 30, 58);
+  // background-color: #46e2e4;
+  padding: 5px;
+  font-size: 1.1em;
+  // border-bottom: 2px solid #46e2e4;
+  border-bottom: 1px solid black;
+
+}
+
+.middleware-wrapper .middleware .description {
+  // color: rgb(255, 255, 255);
+  // background-color: rgb(29, 30, 58);
+  padding: 5px;
+}

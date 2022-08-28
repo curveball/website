@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: documentation
 title: Getting Started
 permalink: getting-started
 nav-links:

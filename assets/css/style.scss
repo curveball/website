@@ -1,4 +1,5 @@
 @import "../../_sass/menu.scss";
+@import "../../_sass/middleware.scss";
 @import "../../_sass/navbar.scss";
 @import "../../_sass/syntax.scss";
 @import "../../_sass/genericons.scss";
@@ -13,7 +14,7 @@ html, body, div, span, applet, object, iframe, caption, p {
    color: inherit;
 }
 
-html, body {
+ html, body {
    width: 100%;
    height: auto;
    position: relative;

@@ -63,6 +63,26 @@
 .menu + input:checked + * {
   display: block; }
 
+.middleware-wrapper {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.middleware-wrapper .middleware {
+  width: 250px;
+  margin: 10px;
+  border: 1px solid black; }
+
+.middleware-wrapper .middleware .title {
+  padding: 5px;
+  font-size: 1.1em;
+  border-bottom: 1px solid black; }
+
+.middleware-wrapper .middleware .description {
+  padding: 5px; }
+
 .navbar {
   width: 100%;
   height: 60px;
