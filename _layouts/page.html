@@ -3,19 +3,29 @@ layout: default
 ---
 
 {% include navbar.html %}
-<header class="hero" style="height: 30vh">
-	<a href="{{ site.url }}{{ site.baseurl }}">
-		<div id="home-title" class="site-icon-page" style="background-image: url({{ site.icon }});" data-stellar-ratio="0.7"></div>
-	</a>
-	<div id="post-info" style="bottom: 30px; text-align: center; line-height: 45px;" data-stellar-ratio="0.7">
-		<h1>{{ page.title }}</h1>
-	</div>
+
+<header class="page-title">
+	<h1>{{ page.title }}</h1>
 </header>
-<div id="middle">
-<div id="article">
-	{{ content }}
-</div>
-</div>
+
+<main>
+	<section class="page-container">
+			<nav class="side-nav-container">
+				<div class="side-nav-container">
+					Menu
+					<ul>
+						{% for item in page.nav-links %}
+							<li><a href="/{{page.permalink}}#{{ item.link }}">{{ item.title }}</a>
+						{% endfor %}
+					</ul>
+			</div>
+		</nav>
+		<div class="content-container">
+			{{ content}}
+		</div>
+	</section>
+</main>
+
 <footer class="clean">
 	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>.</p>
 </footer>

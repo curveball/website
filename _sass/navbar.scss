@@ -3,9 +3,8 @@
   height: 60px;
   display: flex;
   justify-content: flex-start;
-  position: fixed;
+  position: sticky;
   top: 0;
-  z-index: 100;
   background-color: rgb(29, 30, 58);
   overflow: hidden;
   align-items: center;
@@ -21,7 +20,7 @@
 .navbar .nav-items a {
   color: rgb(255, 255, 255);
   font-size: 1.1em;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .navbar .nav-items .active {

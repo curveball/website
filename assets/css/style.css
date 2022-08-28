@@ -68,9 +68,8 @@
   height: 60px;
   display: flex;
   justify-content: flex-start;
-  position: fixed;
+  position: sticky;
   top: 0;
-  z-index: 100;
   background-color: #1d1e3a;
   overflow: hidden;
   align-items: center; }
@@ -84,7 +83,7 @@
 .navbar .nav-items a {
   color: white;
   font-size: 1.1em;
-  padding: 0 20px; }
+  padding: 0 10px; }
 
 .navbar .nav-items .active {
   text-decoration: underline;
@@ -1030,7 +1029,7 @@ section.special.cta h2 {
   opacity: 1; }
 
 .wrapper {
-  padding: 4.5em 10px 2.5em 10px;
+  padding: 0 10px 2.5em 10px;
   background-color: #ffffff;
   border-bottom: solid 2px #eeeeee; }
 
@@ -1038,6 +1037,38 @@ section.special.cta h2 {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px; }
+
+.page-title {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto; }
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  max-width: 1000px; }
+
+.side-nav-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  min-width: 200px; }
+
+.side-nav-container ul {
+  padding-inline-start: 20px;
+  margin-left: 0; }
+
+.content-container {
+  min-width: 0;
+  padding: 0 2rem; }
+
+[id]::before {
+  content: '';
+  display: block;
+  height: 60px;
+  margin-top: -60px;
+  visibility: hidden; }
 
 #middle {
   background-color: #fff;

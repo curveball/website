@@ -2,9 +2,22 @@
 layout: page
 title: Getting Started
 permalink: getting-started
+nav-links:
+  - title: Overview
+    link: overview
+  - title: Installation
+    link: installation
+  - title: Handling requests
+    link: handling-requests
+  - title: Internal subrequests
+    link: internal-subrequests
+  - title: 1xx Informational responses
+    link: 1xx-informational-responses
+  - title: Official middleware
+    link: official-middleware
 ---
 
-# Curveball
+## Overview
 
 Curveball is a framework for building web services in Node.js. It fulfills a
 similar role to [Express][1] and it's heavily inspired by [Koa][2].
@@ -29,15 +42,15 @@ any of the things this project offers.
 $ npm install @curveball/core
 ```
 
+## Handling requests
 
-## Getting started
-
-Curveball only provides a basic framework. Using it means implementing or
-using curveball middleware. For example, if you want a router, use or build
+Curveball core only provides a basic framework. Using it means implementing or
+using Curveball middleware. For example, if you want a router, use or build
 a Router middleware.
 
-All of the following examples are written in typescript, but it is also
-possible to use the framework with plain javascript.
+All of the following examples are written in TypeScript, but it is also
+possible to use the framework with plain JavaScript. The following example
+is the most basic middleware for handling requests.
 
 ```typescript
 import { Application, Context } from '@curveball/core';
@@ -51,20 +64,7 @@ app.use((ctx: Context) => {
 });
 ```
 
-## Middlewares you might want
-
-* [Router](https://github.com/curveball/router).
-* [Body Parser](https://github.com/curveball/bodyparser).
-* [Sessions](https://github.com/curveball/session).
-
-
-## Project status
-
-The project is currently alpha quality. I would love some feedback on developer
-ergonomics. Things might change before a 1.0 release.
-
-
-## Doing internal subrequests
+## Internal subrequests
 
 Many Node.js HTTP frameworks don't easily allow doing internal sub-requests.
 Instead, they recommend doing a real HTTP request. These requests are more
@@ -97,62 +97,7 @@ const request = new MemoryRequest('POST', '/foo/bar', { 'Content-Type': 'text/ht
 const response = await app.subRequest(request);
 ```
 
-## HTTP/2 push
-
-HTTP/2 push can be used to anticipate GET requests client might want to do
-in the near future.
-
-Example use-cases are:
-
-* Sending scripts and stylesheets earlier for HTML-based sites.
-* REST api's sending resources based on relationships clients might want to
-  follow.
-
-```typescript
-import { Application } from '@curveball/core';
-import http2 from 'http2';
-
-const app = new Application();
-const server = http2.createSecureSever({
-  key: fs.readFileSync('server-key.pem'),
-  cert: fs.readFileSync('server-cert.pem')
-}, app.callback());
-
-app.use( ctx => {
-
-  ctx.response.status = 200;
-  ctx.response.headers.set('Content-Type', 'text/html');
-  ctx.response.body = '';
-
-  await ctx.response.push( pushCtx => {
-
-    pushCtx.path = '/script.js';
-    return app.handle(pushCtx);
-
-  });
-
-});
-```
-
-HTTP/2 push works by sending HTTP responses to the client, but it also
-includes HTTP requests. This is because HTTP clients need to know which
-request the response belongs to.
-
-The `push` function simply takes a middleware, similar to `use` on
-Application.  The callback will only be triggered if the clients supports
-push and wants to receive pushes.
-
-In the preceding example, we are using `app.handle()` to do a full HTTP
-request through all the regular middlewares.
-
-It's not required to do this. You can also generate responses right in the
-callback or call an alternative middleware.
-
-Lastly, `pushCtx.request.method` will be set to `GET` by default. `GET` is
-also the only supported method for pushes.
-
-
-## Sending 1xx Informational responses
+## 1xx Informational responses
 
 Curveball has native support for sending informational responses. Examples are:
 
@@ -185,7 +130,17 @@ app.use(async (ctx: Context, next: Middleware) => {
 });
 ```
 
-## API
+## Official middleware
+
+Curveball core provides very basic webserver functionalities. There are a variety of
+officially supported middeware that adds additional features that can be added as
+needed.
+
+* [Router](https://github.com/curveball/router).
+* [Body Parser](https://github.com/curveball/bodyparser).
+* [Sessions](https://github.com/curveball/session).
+
+<!-- ## API
 
 ### The Application class
 
@@ -265,7 +220,7 @@ It has the following methods:
 * `delete(name)` - Deletes a HTTP header.
 * `append(name, value)` - Adds a HTTP header, but doesn't erase an existing
   one with the same name.
-* `getAll()` - Returns all HTTP headers as a key-value object.
+* `getAll()` - Returns all HTTP headers as a key-value object. -->
 
 
 [1]: https://expressjs.com/ "Express"
