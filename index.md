@@ -177,7 +177,7 @@ app.use( async (ctx, next) => {
 
   // Let the entire middleware stack run
   await next();
- 
+
   // HTML encode JSON responses if the client was a browser.
   if (ctx.accepts('text/html') && ctx.response.type ==== 'application/json') {
     ctx.response.type = 'text/html';
