@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Links
+title: Access Logs
 description: Automatically log HTTP requests and responses to the console
 repo: https://github.com/curveball/accesslogs
 ---

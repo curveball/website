@@ -52,6 +52,7 @@ menu:
 
   - title:        Middleware
     url:          /middleware
+    collection:   middleware
 
   # - title:        Examples
   #   url:          /examples

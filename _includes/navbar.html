@@ -1,11 +1,25 @@
 <div class="navbar">
   <div class="nav-items">
     {% for item in site.menu %}
-      {% if page.url == item.url %}
-        <a href="{{ item.url }}" class="active">{{ item.title }}</a>
+      {% if item.collection %}
+        <div class="dropdown nav-item">
+            <a class="dropbtn {% if page.url contains item.url %}active{% endif %}" href="{{ item.url }}">
+            {{ item.title }}
+            <span class="genericon genericon-expand"></span>
+          </a>
+          <div class="dropdown-content">
+            {% for collection-item in site[item.collection] %}
+              <a href="{{ collection-item.url }}" {% if page.url == collection-item.url %}class="active"{% endif %}>{{ collection-item.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+
       {% else %}
-        <a href="{{ item.url }}">{{ item.title }}</a>
+        <div class="nav-item">
+          <a href="{{ item.url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
+        </div>
       {% endif %}
+
 	  {% endfor %}
   </div>
   <div class="social-links" data-stellar-ratio="0.1">
