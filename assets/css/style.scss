@@ -305,34 +305,51 @@ section.special.cta h2 {
    padding: 0 20px;
 }
 
-.page-title {
-   text-align: center;
-   max-width: 1000px;
-   margin: 0 auto;
-}
-
-.page-container {
+.docs-page-wrapper {
    display: flex;
    flex-direction: row;
-   margin: auto;
-   max-width: 1000px;
 }
 
-.side-nav-container {
+.docs-page-wrapper .docs-navbar {
+   background: rgb(238, 238, 238);
+   min-width: 10rem;
+}
+
+.docs-container {
+   margin: auto;
+   max-width: 1200px;
+}
+
+.page-title {
+   width: 100%;
+   margin: 0 auto;
+   padding: 0 2rem;
+}
+
+.docs-container .page-container {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+}
+
+.docs-container .content-container {
+   min-width: 0;
+   padding: 0 2rem;
+}
+
+.docs-container .page-nav-container {
+   width: 500px;
+}
+
+.docs-container .page-nav-container nav {
    position: -webkit-sticky;
    position: sticky;
    top: 60px;
-   min-width: 200px;
 }
 
-.side-nav-container ul {
+.docs-container .page-nav-container ul {
    padding-inline-start: 20px;
    margin-left: 0;
-}
-
-.content-container {
-   min-width: 0;
-   padding: 0 2rem;
 }
 
 [id]::before {

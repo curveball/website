@@ -1,29 +1,67 @@
 ---
 layout: default
+menu:
+  - title:        Getting Started
+    url:          /getting-started
+
+  - title:        Middleware
+    url:          /middleware
+    collection:   middleware
 ---
 
 {% include navbar.html %}
 
-<header class="page-title">
-	<h1>{{ page.title }}</h1>
-</header>
+<main class="docs-page-wrapper">
+	<nav class="docs-navbar">
+		<div style="position: sticky; top: 80px;">
+			{% for item in layout.menu %}
+				{% if item.collection %}
+					<div style="padding-left: 10px;">
+						<div>
+							<a href="{{ item.url }}">
+								{{ item.title }}
+								<span class="genericon genericon-expand"></span>
+							</a>
+						</div>
+						<div>
+							{% for collection-item in site[item.collection] %}
+								<div style="padding-left: 10px;">
+									<a href="{{ collection-item.url }}">{{ collection-item.title }}</a>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
 
-<main>
-	<section class="page-container">
-		<nav class="side-nav-container">
-			<div class="side-nav-container">
-				Menu
-				<ul>
-					{% for item in page.nav-links %}
-						<li><a href="/{{page.permalink}}#{{ item.link }}">{{ item.title }}</a>
-					{% endfor %}
-				</ul>
-			</div>
-		</nav>
-		<div class="content-container">
-			{{ content}}
+				{% else %}
+					<div style="padding-left: 10px;">
+						<a href="{{ item.url }}" >{{ item.title }}</a>
+					</div>
+				{% endif %}
+
+			{% endfor %}
 		</div>
-	</section>
+	</nav>
+
+	<div class="docs-container">
+		<div class="page-title">
+			<h1>{{ page.title }}</h1>
+		</div>
+		<div class="page-container">
+			<div class="content-container">
+				{{ content}}
+			</div>
+			<div class="page-nav-container">
+				<nav style="position: sticky; top: 60px;">
+					On Page
+					<ul>
+						{% for item in page.nav-links %}
+							<li><a href="/{{page.permalink}}#{{ item.link }}">{{ item.title }}</a>
+						{% endfor %}
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
 </main>
 
 <footer class="clean">

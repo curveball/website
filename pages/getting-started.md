@@ -38,9 +38,9 @@ any of the things this project offers.
 
 ## Installation
 
-``` bash
+<!-- ``` bash
 $ npm install @curveball/core
-```
+``` -->
 
 ## Handling requests
 
@@ -52,7 +52,7 @@ All of the following examples are written in TypeScript, but it is also
 possible to use the framework with plain JavaScript. The following example
 is the most basic middleware for handling requests.
 
-```typescript
+<!-- ```typescript
 import { Application, Context } from '@curveball/core';
 
 const app = new Application();
@@ -62,7 +62,7 @@ app.use((ctx: Context) => {
   ctx.response.body = 'Hello world!'
 
 });
-```
+``` -->
 
 ## Internal subrequests
 
@@ -80,22 +80,22 @@ Suggested use-cases:
 
 Example:
 
-```typescript
+<!-- ```typescript
 import { Application } from '@curveball/core';
 
 const app = new Application();
 const response = await app.subRequest('POST', '/foo/bar', { 'Content-Type': 'text/html' }, '<h1>Hi</h1>');
-```
+``` -->
 
 Only the first 2 arguments are required. It's also possible to pass a Request object instead.
 
-```typescript
+<!-- ```typescript
 import { Application, MemoryRequest } from '@curveball/core';
 
 const app = new Application();
 const request = new MemoryRequest('POST', '/foo/bar', { 'Content-Type': 'text/html' }, '<h1>Hi</h1>');
 const response = await app.subRequest(request);
-```
+``` -->
 
 ## 1xx Informational responses
 
@@ -112,7 +112,7 @@ Curveball has native support for sending informational responses. Examples are:
   request completes.
 
 Here's an example of a middleware using `103 Early Hints`:
-
+<!--
 ```typescript
 import { Application, Context, Middleware } from '@curveball/core';
 
@@ -128,7 +128,7 @@ app.use(async (ctx: Context, next: Middleware) => {
   await next();
 
 });
-```
+``` -->
 
 ## Official middleware
 

@@ -47,16 +47,6 @@ menu:
   - title:        Home
     url:          /
 
-  - title:        Getting Started
-    url:          /getting-started
-
-  - title:        Middleware
-    url:          /middleware
-    collection:   middleware
-
-  # - title:        Examples
-  #   url:          /examples
-
 collections_dir: collections
 collections:
   middleware:
