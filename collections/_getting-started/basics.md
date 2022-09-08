@@ -1,7 +1,6 @@
 ---
 layout: documentation
-title: Getting Started
-permalink: getting-started
+title: Basics
 nav-links:
   - title: Overview
     link: overview

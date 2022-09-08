@@ -2,10 +2,11 @@
 layout: default
 menu:
   - title:        Getting Started
-    url:          /getting-started
+    url_base:          /getting-started
+    collection:   getting-started
 
   - title:        Middleware
-    url:          /middleware
+    url_base:          /middleware
     collection:   middleware
 ---
 
@@ -15,14 +16,10 @@ menu:
 	<nav class="docs-navbar">
 		<div style="position: sticky; top: 80px;">
 			{% for item in layout.menu %}
+				<!-- Expandable Sections-->
 				{% if item.collection %}
-					<div style="padding-left: 10px;">
-						<div>
-							<a href="{{ item.url }}">
-								{{ item.title }}
-								<span class="genericon genericon-expand"></span>
-							</a>
-						</div>
+					<details style="padding-left: 10px;" {% if page.url contains item.url_base %}open{% endif %}>
+						<summary>{{ item.title }}</summary>
 						<div>
 							{% for collection-item in site[item.collection] %}
 								<div style="padding-left: 10px;">
@@ -30,7 +27,9 @@ menu:
 								</div>
 							{% endfor %}
 						</div>
-					</div>
+					</details>
+					<!-- </div> -->
+				<!-- END Expandable Sections-->
 
 				{% else %}
 					<div style="padding-left: 10px;">

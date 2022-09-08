@@ -49,6 +49,8 @@ menu:
 
 collections_dir: collections
 collections:
+  getting-started:
+    output: true
   middleware:
     output: true
 
