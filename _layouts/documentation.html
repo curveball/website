@@ -21,11 +21,11 @@ menu:
 					<details style="padding-left: 10px;" {% if page.url contains item.url_base %}open{% endif %}>
 						<summary>{{ item.title }}</summary>
 						<div>
+							<ul>
 							{% for collection-item in site[item.collection] %}
-								<div style="padding-left: 10px;">
-									<a href="{{ collection-item.url }}">{{ collection-item.title }}</a>
-								</div>
+								<li><a href="{{ collection-item.url }}">{{ collection-item.title }}</a></li>
 							{% endfor %}
+							</ul>
 						</div>
 					</details>
 					<!-- </div> -->
@@ -51,12 +51,14 @@ menu:
 			</div>
 			<div class="page-nav-container">
 				<nav style="position: sticky; top: 60px;">
-					On Page
+					{% if page.nav-links %}
+					On this Page
 					<ul>
 						{% for item in page.nav-links %}
 							<li><a href="/{{page.permalink}}#{{ item.link }}">{{ item.title }}</a>
 						{% endfor %}
 					</ul>
+					{% endif %}
 				</nav>
 			</div>
 		</div>
