@@ -9,11 +9,12 @@
   align-items: center;
 }
 
+.navbar > img {
+  height: 70%;
+}
+
 .navbar .nav-items {
-  flex: 0 1 auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1 1 auto;
 }
 
 .nav-item {
