@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Basics
+permalink: /docs/getting-started/basics
 nav-links:
   - title: Overview
     link: overview
@@ -16,30 +17,11 @@ nav-links:
     link: official-middleware
 ---
 
-## Overview
-
-Curveball is a framework for building web services in Node.js. It fulfills a
-similar role to [Express][1] and it's heavily inspired by [Koa][2].
-
-This web framework has the following goals:
-
-* A minimal foundation.
-* Completely written in and for [TypeScript][3].
-* Modern Ecmascript features.
-* Async/await-based middleware.
-* Native support for modern HTTP features, such as [`103 Early Hints`][http-103].
-* The ability to easily do internal sub-requests without having to do a real
-  HTTP request.
-
-If you used Koa in the past, this is going to look pretty familiar. I'm a big
-fan of Koa myself and would recommend it over this project if you don't need
-any of the things this project offers.
-
 ## Installation
 
-<!-- ``` bash
+``` bash
 $ npm install @curveball/core
-``` -->
+``` 
 
 ## Handling requests
 
@@ -51,7 +33,7 @@ All of the following examples are written in TypeScript, but it is also
 possible to use the framework with plain JavaScript. The following example
 is the most basic middleware for handling requests.
 
-<!-- ```typescript
+```typescript
 import { Application, Context } from '@curveball/core';
 
 const app = new Application();
@@ -61,8 +43,7 @@ app.use((ctx: Context) => {
   ctx.response.body = 'Hello world!'
 
 });
-``` -->
-
+```
 ## Internal subrequests
 
 Many Node.js HTTP frameworks don't easily allow doing internal sub-requests.
@@ -184,12 +165,12 @@ properties and methods:
   request.
 * `body` - This might represent the body, but is initially just empty. It's
   up to middlewares to do something with raw body and parse it.
-* `rawBody()` - This function uses the [raw-body][5] function to parse the
+* `rawBody()` - This function uses the [raw-body][1] function to parse the
   body from the request into a string or Buffer. You can only do this once,
   so a middleware should use this function to populate `body`.
 * `query` - An object containing the query parametes.
 * `type` - The `Content-Type` without additional parameters.
-* `accepts` - Uses the [accepts][6] package to do content-negotiation.
+* `accepts` - Uses the [accepts][2] package to do content-negotiation.
 
 
 ### The Response interface
@@ -222,11 +203,8 @@ It has the following methods:
 * `getAll()` - Returns all HTTP headers as a key-value object. -->
 
 
-[1]: https://expressjs.com/ "Express"
-[2]: https://koajs.com/ "Koa"
-[3]: https://www.typescriptlang.org/ "TypeScript"
-[5]: https://www.npmjs.com/package/raw-body
-[6]: https://www.npmjs.com/package/accepts
+
+[1]: https://www.npmjs.com/package/raw-body
+[2]: https://www.npmjs.com/package/accepts
 [http-100]: https://tools.ietf.org/html/rfc7231#section-6.2.1 "RFC7231: 100 Continue"
 [http-102]: https://tools.ietf.org/html/rfc2518#section-10.1 "RFC2518: 102 Processing"
-[http-103]: https://tools.ietf.org/html/rfc8297 "RFC8297: 103 Early Hints"
