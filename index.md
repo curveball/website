@@ -34,6 +34,26 @@ app.use( ctx => {
 exports.handler = handler(app);
 ```
 
+### Hello world on Bun
+
+To use Curveball with [Bun](https://bun.sh/), use the kernel package:
+
+```typescript
+import { Application } from '@curveball/kernel';
+const app = new Application();
+// Add all your middlewares here!
+app.use( ctx => {
+  ctx.response.body = {msg: 'hello world!'};
+});
+export default {
+  port: 3000,
+  fetch: app.fetch.bind(app)
+};
+```
+
+Some more information and examples can be found in [this article](https://evertpot.com/bun-curveball-framework).
+
+
 ### HTTP/2 Push
 
 ```typescript
@@ -52,6 +72,8 @@ app.use( ctx => {
 
 });
 ```
+
+
 
 The callback to `ctx.push` will only get called if Push was supported by the
 client, and because it creates a new 'context', any middleware can be attached
