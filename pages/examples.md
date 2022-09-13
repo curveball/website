@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Examples
-permalink: examples
+permalink: docs/examples
 ---
 
 ## TODO
