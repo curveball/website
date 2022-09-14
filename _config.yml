@@ -19,6 +19,9 @@ baseurl:
 author:
   name:           Evert Pot
   url:            https://evertpot.com
+  company:
+    name: Bad Gateway
+    url: https://badgateway.net
 
 include: ['_sass', '*.scss']
 
@@ -37,11 +40,11 @@ social:
 
   - icon:         github
     url:          https://github.com/curveball/core
-    desc:         Fork me on github
+    desc:         Fork Curveball on Github
 
   - icon:         feed
     url:          https://curveballjs.org/atom.xml
-    desc:         Subscribe to my feed
+    desc:         Subscribe to the Curveball RSS feed
 
 menu:
   - title:        Home
@@ -61,6 +64,11 @@ collections:
     - node.md
   middleware:
     output: true
+  api:
+    output: true
+  examples:
+    output: true
+  
 
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
 google_analytics:

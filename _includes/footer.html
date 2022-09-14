@@ -1,0 +1,30 @@
+<footer>
+  <div class="colophon">
+    <h3><img src="{{ site.icon }}" style="height: 35px;" alt="{{ site.title }} logo" title="{{ site.title }} - {{ site.tagline }}" /></h3>
+    <p class="copyright">
+      &copy; {{ site.time | date: "%Y" }} &middot; 
+      <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a> is maintained with <span class="genericon genericon-heart"></span> at <a href="{{site.author.company.url}}">{{ site.author.company.name }}</a> in Toronto.
+    </p>
+  </div>
+  
+  <div class="site-links">
+    <h3>Use Curveball</h3>
+    <ul>
+      <li>Home</li>
+      <li>Get started</li>
+      <li>Middleware</li>
+      <li>Examples</li>
+    </ul>
+  </div>
+  <div class="social-links">
+    <h3>Community</h3>
+    <ul>
+    {% for social in site.social %}
+      <li>
+        <span class="genericon genericon-{{ social.icon }}"></span>
+        <a href="{{ social.url }}" target="_blank" title="{{ social.desc }}">{{ social.icon }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</footer>

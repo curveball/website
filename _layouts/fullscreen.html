@@ -2,14 +2,13 @@
 layout: default
 ---
 
-<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="{% if page.image.url %}background-image: url({{ site.baseurl }}{{ page.image.url }}{% else %}background-color: #e5e5e5{% endif %});{% if page.background_position %} background-position: {{ page.background_position }};{% endif %}height: 100%;">
-	{% if page.video %}
-		<video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-		{% for format in page.video %}
-			<source src="{% for url in format limit:1 offset:1 %}{{ url }}{% endfor %}" type="video/{% for type in format limit:1 %}{{ type }}{% endfor %}">
-		{% endfor %}
-		</video>
-	{% endif %}
-	{% include top.html %}
-	{{ content }}
+{% include navbar.html %}
+<header class="hero" style="height: calc(100vh - 60px); background-image: linear-gradient(#1d1e3a, rgba(29, 30, 58, 0.6)), url('/assets/images/pattern-size1.svg'), url('/assets/images/cover-2.jpg')">
+	<div class="poster">
+		<a class="logo" href="{{ site.url }}{{ site.baseurl }}">
+			<img src="{{ site.icon }}">
+		</a>
+		<h1>{{  page.title }}</h1>
+		{{ content }}
+	</div>
 </header>

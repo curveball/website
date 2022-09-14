@@ -1,5 +1,5 @@
 <div class="navbar">
-  <img src="/assets/images/logo.svg" alt="Curveball logo" style="height: 60%"/>
+  <img src="/assets/images/logo.svg" alt="Curveball logo"/>
   <div class="nav-items">
     {% for item in site.menu %}
       {% if item.collection %}
@@ -22,10 +22,5 @@
       {% endif %}
 
 	  {% endfor %}
-  </div>
-  <div class="social-links" data-stellar-ratio="0.1">
-    {% for social in site.social %}
-      <a href="{{ social.url }}" target="_blank" title="{{ social.desc }}"><span class="genericon genericon-{{ social.icon }}"></span></a>
-    {% endfor %}
   </div>
 </div>

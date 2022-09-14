@@ -1,29 +1,39 @@
 ---
 layout: default
 menu:
-  - title:        Getting Started
-    url_base:          /getting-started
-    collection:   getting-started
+  - title:      Getting Started
+    url_base:   /getting-started
+    collection: getting-started
 
-  - title:        Middleware
-    url_base:          /middleware
-    collection:   middleware
+  - title:       API
+    url_base:    /API
+    collection:  api
+
+  - title:      Middleware
+    url_base:   /middleware
+    collection: middleware
+
+  - title:      Examples
+    url_base:   /examples
+    collection: examples
 ---
 
 {% include navbar.html %}
 
 <main class="docs-page-wrapper">
 	<nav class="docs-navbar">
-		<div style="position: sticky; top: 80px;">
+		<div style="position: sticky; top: 60px;">
 			{% for item in layout.menu %}
 				<!-- Expandable Sections-->
 				{% if item.collection %}
-					<details style="padding-left: 10px;" {% if page.url contains item.url_base %}open{% endif %}>
+					<details {% if page.url contains item.url_base %}open{% endif %}>
 						<summary>{{ item.title }}</summary>
 						<div>
 							<ul>
 							{% for collection-item in site[item.collection] %}
-								<li><a href="{{ collection-item.url }}">{{ collection-item.title }}</a></li>
+								<li {% if collection-item.badge  %} data-badge={{collection-item.badge}} {% endif %}>
+									<a href="{{ collection-item.url }}" {% if page.url == collection-item.permalink %} class="active" {% endif %}>{{ collection-item.title }}</a>
+								</li>
 							{% endfor %}
 							</ul>
 						</div>
@@ -44,27 +54,37 @@ menu:
 	<div class="docs-container">
 		<div class="page-title">
 			<h1>{{ page.title }}</h1>
+			
+			{% if page.description %}
+			<h4 id="page-description"> {{ page.description }}</h4>
+			{% endif %}
+
+			{% if page.repo %}
+			<a href="{{ page.repo }}" target="_blank" class="button alternate">Github repo <span class="genericon genericon-external"></span></a>
+			{% endif %}
+
 		</div>
 		<div class="page-container">
 			<div class="content-container">
-				{{ content}}
+				{{ content }}
 			</div>
 			<div class="page-nav-container">
-				<nav style="position: sticky; top: 60px;">
-					{% if page.nav-links %}
+				{% if page.nav-links %}
+				<nav>
 					On this Page
 					<ul>
 						{% for item in page.nav-links %}
-							<li><a href="/{{page.permalink}}#{{ item.link }}">{{ item.title }}</a>
+							<li>
+								<span class='genericon genericon-standard'></span>
+								<a href="#{{ item.link }}">{{ item.title }}</a>
+							</li>
 						{% endfor %}
 					</ul>
-					{% endif %}
 				</nav>
+				{% endif %}
 			</div>
 		</div>
 	</div>
 </main>
 
-<footer class="clean">
-	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>.</p>
-</footer>
+{% include footer.html %}
