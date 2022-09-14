@@ -27,25 +27,53 @@ header.hero {
   flex-direction: column;
   align-items: center;
   background-color: #1d1e3aff;
-  background: red;
   background-image: linear-gradient(#1d1e3aff, #1d1e3a99), url("../images/pattern-size1.svg"), url("../images/cover-1.jpg");
+  background-blend-mode: normal, normal, luminosity;
   background-position: top, center center, right bottom;
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;
   min-height: 35em;
-  background-blend-mode: normal, normal, luminosity;
+  h1, h2, h3, h4 {
+    color: white;
+  }
 }
 
 footer {
   background: rgba(29, 30, 58, 0.47);
   color: #ffffffaa;
   border: 1px solid transparent;
-  padding: 10px 0;
-}
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  justify-items: start;
+  justify-content: space-around;
+  gap: 1em;
+  padding: 2rem 17rem;
+  
+  a, h1, h2, h3, h4 {
+    color: white;
+    white-space: nowrap;
+    text-transform: capitalize;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
 
-footer a {
-  color: white;
+  img {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .copyright {
+    max-width: 14rem;
+  }
+
+
 }
 
 p {
@@ -65,15 +93,19 @@ h3,
 h4 {
   line-height: 1.7em;
   font-weight: 200;
+  color: #444;
 }
 
 ul {
- list-style: "⚾";
- margin-left: 10px;
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
 }
 
-ul li {
- padding-left: 10px;
+strong {
+  color: #444;
 }
 
 #about h3 {
@@ -149,10 +181,6 @@ ul.actions li {
    margin: 0;
 }
 
-ul.actions .button {
- width: 200px;
-}
-
 .button-group {
   text-align: right;
 
@@ -206,14 +234,20 @@ ul.actions .button {
    background-color: transparent;
    color: #46e1e4;
    box-shadow: inset 0 0 0 2px rgba(70, 225, 228, .25);
+   
+   &.alternate {
+    color: #1f1e3a;
+    box-shadow: inset 0 0 0 2px #1f1e3a;
+   }
+
+   &.primary {
+      box-shadow: 0 0px 0px -2px #46e2e466;
+      background-color: #46e2e4;
+      color: #1d1e3a;
+      transition: all 0.5s ease-in-out;
+   }
 }
 
-.button.primary {
-   box-shadow: 0 0px 0px -2px #46e2e466;
-   background-color: #46e2e4;
-   color: #1d1e3a;
-   transition: all 0.5s ease-in-out;
-}
 
 
 .site-icon-small {
@@ -300,53 +334,6 @@ section.special.cta h2 {
   padding: 0 20px;
 }
 
-.docs-page-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.docs-page-wrapper .docs-navbar {
-  background: rgb(238, 238, 238);
-  min-width: 10rem;
-}
-
-.docs-container {
-  margin: auto;
-  max-width: 1200px;
-}
-
-.page-title {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.docs-container .page-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.docs-container .content-container {
-  min-width: 0;
-  padding: 0 2rem;
-}
-
-.docs-container .page-nav-container {
-  width: 500px;
-}
-
-.docs-container .page-nav-container nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 60px;
-}
-
-.docs-container .page-nav-container ul {
-  padding-inline-start: 20px;
-  margin-left: 0;
-}
-
 [id]::before {
   content: '';
   display: block;
@@ -406,10 +393,6 @@ header.major h2 {
 
 #article-img a, #article-img a:hover {
   border-bottom: 0px;
-}
-
-a.site-title:hover, .copyright a:hover {
-  text-decoration: underline;
 }
 
 table {
@@ -475,7 +458,7 @@ blockquote p {
 }
 
 code, pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: Menlo, Monaco, monospace;
   background-color: #f9f9f9;
 }
 
@@ -560,15 +543,6 @@ pre code {
 .older-posts:hover, .newer-posts:hover {
   color: #ff4e60;
   border-color: #ff4e60;
-}
-
-.copyright {
-  width: 50vw;
-   margin: 0 auto;
-}
-
-.copyright a {
-  text-decoration: none;
 }
 
 #post-list {
@@ -685,13 +659,18 @@ header, footer {
  margin-left: -350px;
 }
 
-.copyright {
- right: 20px;
-}
-
 table {
  width: 100%;
 }
+
+
+summary {
+  cursor: pointer;
+}
+summary {
+  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 
 /* Mobile styles */
 @media only screen and (max-width: 899px) {
@@ -802,4 +781,5 @@ table {
    display: block;
    overflow: auto;
  }
-}
+} /* End Mobile styles */
+
