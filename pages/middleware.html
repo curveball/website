@@ -11,15 +11,15 @@ permalink: docs/middleware
 <div class="middleware-wrapper">
   {% for item in site.middleware %}
   <div class="middleware">
-    <div class="title">
+    <h2>
       {{ item.title }}
-    </div>
-    <div class="description">
+    </h2>
+    <p class="description">
       {{ item.description }}
-    </div>
-    <div class="links">
-      <a href="{{ item.url }}">More info <span class="genericon genericon-rightarrow"></span></a>
-    </div>
+    </p>
+    
+    <a href="{{ item.url }}" class="button special">Read more <span class="genericon genericon-rightarrow"></span></a>
+    
   </div>
   {% endfor %}
 </div>

@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Curveball Documentation
 permalink: /docs
 layout: documentation
 ---
