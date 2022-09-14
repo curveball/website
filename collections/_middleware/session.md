@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: Session
+permalink: /docs/middleware/session
 description: Session support
 repo: https://github.com/curveball/session
 ---
 
-BROWSER-TO-BEARER TEST
+documentation goes here
