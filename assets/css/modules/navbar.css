@@ -10,10 +10,11 @@
   align-items: center;
 }
 
-.navbar > img {
+.navbar > a > img {
   height: 38px;
   padding-left: 1em;
   width: 14rem;
+  vertical-align: middle;
 }
 
 .navbar .nav-items {

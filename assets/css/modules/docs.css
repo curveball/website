@@ -3,16 +3,26 @@
   display: flex;
   flex-direction: row;
 }
+.docs-page-wrapper > input[name=sidebar-toggle] {
+  display: none;
+}
+.docs-page-wrapper > input[name=sidebar-toggle] + label {
+  display: none;
+  padding: 0 0.8em;
+  position: fixed;
+  top: 85vh;
+  left: 0.5rem;
+  z-index: 2;
+}
 
 .docs-page-wrapper .docs-navbar {
-  background: rgba(114, 114, 137, 0.07);
+  background: rgb(245, 245, 247);
   min-width: 16rem;
 }
 
 .docs-container {
   margin: auto;
   max-width: 1200px;
-  flex: 1 1 auto;
   min-height: 45rem;
 }
 .docs-container .page-title {
@@ -25,9 +35,6 @@
   gap: 2rem;
   padding: 0 2rem 4rem;
   /* docs page internal links navbar */
-}
-.docs-container .page-container .content-container {
-  min-width: 0;
 }
 .docs-container .page-container .page-nav-container nav:not(:empty) {
   position: -webkit-sticky;
@@ -120,6 +127,60 @@
 .docs-navbar details[open] ul {
   transform: translateY(0);
   padding: 0 0 1ex;
+}
+
+[data-badge] {
+  position: relative;
+}
+
+[data-badge]:not([data-badge=""])::after {
+  content: attr(data-badge);
+  position: absolute;
+  right: 1rem;
+  top: 0.75rem;
+  font-size: 12px;
+  background: rgba(255, 78, 96, 0.4901960784);
+  color: white;
+  padding: 0 1ex;
+  border-radius: 0.4ex;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 1080px) {
+  .docs-page-wrapper {
+    /* SIDEBAR TOGGLE SYSTEM */
+  }
+  .docs-page-wrapper .docs-container {
+    width: 100%;
+  }
+  .docs-page-wrapper .docs-container .page-container {
+    flex-direction: column-reverse;
+  }
+  .docs-page-wrapper .docs-navbar {
+    opacity: 0;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+    min-width: unset;
+    transform: translateX(-100%);
+    transition: all 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
+    z-index: 1;
+  }
+  .docs-page-wrapper > input[name=sidebar-toggle] ~ label {
+    display: initial;
+    background-color: white;
+  }
+  .docs-page-wrapper > input[name=sidebar-toggle]:checked ~ .docs-navbar {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  .docs-page-wrapper > input[name=sidebar-toggle]:checked ~ label {
+    color: white;
+    background-color: #1f1e3a;
+  }
 }
 
 /*# sourceMappingURL=docs.css.map */
