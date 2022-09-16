@@ -1,6 +1,10 @@
-all: docker-run
+all: run
+
+run: docker-run
+
 
 DOCKER_IMAGE_NAME=curveball-website
+
 
 docker-build: Dockerfile
 	docker build -t $(DOCKER_IMAGE_NAME) .

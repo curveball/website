@@ -4,8 +4,6 @@ FROM ruby:$RUBY_VERSION
 WORKDIR /opt/www
 
 COPY Gemfile Gemfile
-RUN gem update bundler
-RUN bundle update
 RUN bundle install
 
 COPY . src
