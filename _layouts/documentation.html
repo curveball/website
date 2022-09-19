@@ -55,7 +55,7 @@ menu:
 		</div>
 	</nav>
 
-	<div class="docs-container">
+	<section class="docs-container">
 		<div class="page-title">
 			<h1>{{ page.title }}</h1>
 			
@@ -73,22 +73,39 @@ menu:
 				{{ content }}
 			</div>
 			<div class="page-nav-container">
-				{% if page.nav-links %}
 				<nav>
-					On this Page
+					<h5>On this Page</h5>
 					<ul>
+						{% if page.nav-links %}
 						{% for item in page.nav-links %}
 							<li>
-								<span class='genericon genericon-standard'></span>
-								<a href="#{{ item.link }}">{{ item.title }}</a>
+								<a href="#{{ item.link }}"><span>{{ item.title }}</span></a>
 							</li>
 						{% endfor %}
+						{% endif %}
 					</ul>
 				</nav>
-				{% endif %}
 			</div>
 		</div>
-	</div>
+	</section>
 </main>
 
+<script>
+
+	const headings = document.querySelectorAll('.content-container h2');
+	const pageNavList = document.querySelector('.page-nav-container ul');
+	// only run if docs page doesn't have it's own list of nav-links
+	if(pageNavList.childElementCount === 0 && headings.length > 0) {
+
+		for (const h of headings) {
+			let li = document.createElement('li');
+			let a =  document.createElement('a');
+			a.href = `#${h.id}`;
+			a.innerHTML = h.textContent;
+			li.appendChild(a);
+			pageNavList.appendChild(li);
+		}
+	}
+
+</script>
 {% include footer.html %}

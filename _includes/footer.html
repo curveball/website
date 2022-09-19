@@ -3,7 +3,7 @@
     <h3><img src="{{ site.icon }}" style="height: 35px;" alt="{{ site.title }} logo" title="{{ site.title }} - {{ site.tagline }}" /></h3>
     <p class="copyright">
       &copy; {{ site.time | date: "%Y" }} &middot; 
-      <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a> is maintained with <span class="genericon genericon-heart"></span> at <a href="{{site.author.company.url}}">{{ site.author.company.name }}</a> in Toronto.
+      <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a> is maintained with ♥ at <a href="{{site.author.company.url}}">{{ site.author.company.name }}</a> in Toronto.
     </p>
   </div>
   
@@ -27,4 +27,11 @@
     {% endfor %}
     </ul>
   </div>
+  <script>
+    const externalLinks = document.querySelectorAll('a[href^=http');
+
+    for (const a of externalLinks) {
+      a.setAttribute('target', '_blank');
+    }
+  </script>
 </footer>

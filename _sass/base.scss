@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe, caption, p {
+html, body, section, div, span, applet, object, iframe, caption, p {
   margin: 0;
   border: 0;
   color: inherit;
@@ -54,9 +54,15 @@ footer {
     color: white;
     white-space: nowrap;
     text-transform: capitalize;
+    text-decoration: none !important;
+
+    &::after {
+      content: '' !important;
+    }
   }
+
   a:hover, a:focus {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 
   img {
@@ -66,6 +72,13 @@ footer {
   ul {
     padding: 0;
     margin: 0;
+    li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      a { flex: 1}
+    }
   }
   
   .copyright {
@@ -83,7 +96,47 @@ p {
 
 a {
   color: #ff4e60;
-  text-decoration: none;
+
+  &:not(.button) {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #ff4e6077;
+    transition: all .1s;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  
+    &:hover,
+    &:focus {
+      text-decoration-style: solid;
+      text-decoration-color: #ff4e60;
+    }
+  }
+}
+
+a:not(.button)[href^="http"] {
+  &::after {
+    font-family: 'Genericons';
+    content: '\f442';
+
+  }
+}
+/*
+a[href^="#"] {
+  position: relative;
+  
+  &::before {
+    content: '#';
+    position: absolute;
+    left: -1em;
+    color: #777a;
+    top: 0;
+    line-height: 1;
+  }
+}
+*/
+
+.navbar a, .docs-navbar a {
+  text-decoration: none!important;
 }
 
 h1,
@@ -100,10 +153,11 @@ ul {
   padding: 0;
 
   li {
-    list-style: none;
+    list-style: square;
   }
 
   &.inline-blocks {
+    
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -112,6 +166,7 @@ ul {
     max-width: 60rem;
 
     li {
+      list-style: none;
       text-align: center;
       width: 13rem;
       &> strong {
@@ -120,6 +175,11 @@ ul {
     }
   }
 
+}
+
+h2 + ul,
+p + ul {
+  padding: 0 0 0 1rem;
 }
 
 strong {
@@ -206,7 +266,7 @@ ul.actions li {
 }
 
 #examples h3 {
- padding-top: 40px;
+ padding-top: 60px;
 }
 
 #examples .highlight {
@@ -489,8 +549,8 @@ code {
 
 pre {
   display: block;
-  font-size: .8rem;
-  line-height: 1.4;
+  font-size: .9rem;
+  line-height: 1.6;
   white-space: pre;
   word-break: break-all;
   word-wrap: break-word;

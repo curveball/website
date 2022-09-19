@@ -83,17 +83,19 @@ const response = await app.subRequest(request);
 
 Curveball has native support for sending informational responses. Examples are:
 
-* [`100 Continue`][http-100] to let a client know even before the request
+* [100 Continue][http-100] &ndash; to let a client know even before the request
   completed that it makes sense to continue, or that it should break off the
   request.
-* [`102 Processing`][http-102] to periodically indicate that the server is
+
+* [102 Processing][http-102] &ndash; to periodically indicate that the server is
   still working on the response. This might not be very useful anymore.
-* [`103 Early Hints`][http-103] a new standard to let a client or proxy know
+
+* [103 Early Hints][http-103] &ndash; a new standard to let a client or proxy know
   early in the process that some headers might be coming, allowing clients or
   proxies to for example pre-fetch certain resources even before the initial
   request completes.
 
-Here's an example of a middleware using `103 Early Hints`:
+### Example: middleware using `103 Early Hints`:
 
 ```typescript
 import { Application, Context, Middleware } from '@curveball/core';
@@ -117,12 +119,13 @@ Curveball core provides very basic webserver functionalities. There are a variet
 officially supported middeware that adds additional features that can be added as
 needed.
 
-* [Router](https://github.com/curveball/router).
-* [Body Parser](https://github.com/curveball/bodyparser).
-* [Sessions](https://github.com/curveball/session).
+* [Router](https://github.com/curveball/router)
+* [Body Parser](https://github.com/curveball/bodyparser)
+* [Sessions](https://github.com/curveball/session)
 
 
 [1]: https://www.npmjs.com/package/raw-body
 [2]: https://www.npmjs.com/package/accepts
 [http-100]: https://tools.ietf.org/html/rfc7231#section-6.2.1 "RFC7231: 100 Continue"
 [http-102]: https://tools.ietf.org/html/rfc2518#section-10.1 "RFC2518: 102 Processing"
+[http-103]: https://tools.ietf.org/html/rfc8297 "RFC8297: 103 Early Hints"
