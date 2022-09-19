@@ -2,19 +2,35 @@
 layout: default
 menu:
   - title:      Getting Started
-    url_base:   /getting-started
+    url_base:   /docs/getting-started
     collection: getting-started
+    collection_items: 
+    - title: Introduction
+      url: basics
+
+    - title: Node
+      url: node
+
+    - title: Bun
+      url: bun
+      badge: new
+
+    - title: AWS Lambda
+      url: aws-lambda
+
+    - title: Azure
+      url: azure
 
   - title:       API
-    url_base:    /API
+    url_base:    /docs/api
     collection:  api
 
   - title:      Middleware
-    url_base:   /middleware
+    url_base:   /docs/middleware
     collection: middleware
 
   - title:      Examples
-    url_base:   /examples
+    url_base:   /docs/examples
     collection: examples
 ---
 
@@ -34,11 +50,28 @@ menu:
 						<summary>{{ item.title }}</summary>
 						<div>
 							<ul>
-							{% for collection-item in site[item.collection] %}
+							<!-- 
+								define collection_items inside a `menu` item 
+								in the front matter to manually sort the 
+								collection menu items
+							--> 
+							{% if item.collection_items %}
+								{% for collection-item in item.items %}
 								<li {% if collection-item.badge  %} data-badge={{collection-item.badge}} {% endif %}>
-									<a href="{{ collection-item.url }}" {% if page.url == collection-item.permalink %} class="active" {% endif %}>{{ collection-item.title }}</a>
+									<a href="{{ item.url_base }}/{{ collection-item.url }}" {% if page.url == item.url %} class="active" {% endif %}>{{ collection-item.title }}</a>
 								</li>
-							{% endfor %}
+								{% endfor %}
+							<!--
+								otherwise, look in the collections folder 
+								and use default sort
+							-->
+							{% else %}
+								{% for collection-item in site[item.collection] %}
+									<li {% if collection-item.badge  %} data-badge={{collection-item.badge}} {% endif %}>
+										<a href="{{ collection-item.url }}" {% if page.url == collection-item.permalink %} class="active" {% endif %}>{{ collection-item.title }}</a>
+									</li>
+								{% endfor %}
+							{% endif %}
 							</ul>
 						</div>
 					</details>
