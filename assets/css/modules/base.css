@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe, caption, p {
+html, body, section, div, span, applet, object, iframe, caption, p {
   margin: 0;
   border: 0;
   color: inherit;
@@ -55,9 +55,13 @@ footer a, footer h1, footer h2, footer h3, footer h4 {
   color: white;
   white-space: nowrap;
   text-transform: capitalize;
+  text-decoration: none !important;
+}
+footer a::after, footer h1::after, footer h2::after, footer h3::after, footer h4::after {
+  content: "" !important;
 }
 footer a:hover, footer a:focus {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 footer img {
   display: block;
@@ -65,6 +69,15 @@ footer img {
 footer ul {
   padding: 0;
   margin: 0;
+}
+footer ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+footer ul li a {
+  flex: 1;
 }
 footer .copyright {
   max-width: 14rem;
@@ -78,7 +91,41 @@ p {
 
 a {
   color: #ff4e60;
-  text-decoration: none;
+}
+a:not(.button) {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(255, 78, 96, 0.4666666667);
+  transition: all 0.1s;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+a:not(.button):hover, a:not(.button):focus {
+  text-decoration-style: solid;
+  text-decoration-color: #ff4e60;
+}
+
+a:not(.button)[href^=http]::after {
+  font-family: "Genericons";
+  content: "\f442";
+}
+
+/*
+a[href^="#"] {
+  position: relative;
+
+  &::before {
+    content: '#';
+    position: absolute;
+    left: -1em;
+    color: #777a;
+    top: 0;
+    line-height: 1;
+  }
+}
+*/
+.navbar a, .docs-navbar a {
+  text-decoration: none !important;
 }
 
 h1,
@@ -95,7 +142,7 @@ ul {
   padding: 0;
 }
 ul li {
-  list-style: none;
+  list-style: square;
 }
 ul.inline-blocks {
   display: flex;
@@ -106,11 +153,17 @@ ul.inline-blocks {
   max-width: 60rem;
 }
 ul.inline-blocks li {
+  list-style: none;
   text-align: center;
   width: 13rem;
 }
 ul.inline-blocks li > strong {
   display: block;
+}
+
+h2 + ul,
+p + ul {
+  padding: 0 0 0 1rem;
 }
 
 strong {
@@ -197,7 +250,7 @@ ul.actions li {
 }
 
 #examples h3 {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 #examples .highlight {
@@ -476,8 +529,8 @@ code {
 
 pre {
   display: block;
-  font-size: 0.8rem;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  line-height: 1.6;
   white-space: pre;
   word-break: break-all;
   word-wrap: break-word;

@@ -36,6 +36,12 @@
   padding: 0 2rem 4rem;
   /* docs page internal links navbar */
 }
+.docs-container .page-container .highlight {
+  max-width: 44rem;
+}
+.docs-container .page-container img {
+  max-width: 100%;
+}
 .docs-container .page-container .page-nav-container nav:not(:empty) {
   position: -webkit-sticky;
   position: sticky;
@@ -46,6 +52,15 @@
   display: flex;
   align-items: baseline;
   gap: 0.25rem;
+  padding: 0 0 1ex;
+}
+.docs-container .page-container .page-nav-container nav:not(:empty) ul li::before {
+  content: "\f100";
+  font-family: "Genericons";
+  line-height: 1;
+}
+.docs-container .page-container .page-nav-container nav:not(:empty) ul li a {
+  flex: 1;
 }
 
 /* left-hand sidebar*/
