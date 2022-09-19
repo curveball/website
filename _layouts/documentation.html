@@ -56,9 +56,9 @@ menu:
 								collection menu items
 							--> 
 							{% if item.collection_items %}
-								{% for collection-item in item.items %}
+								{% for collection-item in item.collection_items %}
 								<li {% if collection-item.badge  %} data-badge={{collection-item.badge}} {% endif %}>
-									<a href="{{ item.url_base }}/{{ collection-item.url }}" {% if page.url == item.url %} class="active" {% endif %}>{{ collection-item.title }}</a>
+									<a href="{{ item.url_base }}/{{ collection-item.url }}" {% if page.url contains collection-item.url %} class="active" {% endif %}>{{ collection-item.title }}</a>
 								</li>
 								{% endfor %}
 							<!--
