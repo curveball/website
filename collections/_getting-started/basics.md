@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Basics
+title: Introduction
 permalink: /docs/getting-started/basics
 
 ---
