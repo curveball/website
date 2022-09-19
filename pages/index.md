@@ -4,12 +4,13 @@ layout: home
 permalink: /
 ---
 
-## Installation
-```bash
-$ npm install @curveball/core
-```
+{:.list-class-name}
+- [Hello World](#hello-world)
+- [Hello World on AWS Lambda](#hello-world-on-aws-lambda)
+- [Hello World on Bun](#hello-world-on-bun)
 
-## Hello world
+
+### Hello world
 
 ```typescript
 import { Application } from '@curveball/core';
@@ -40,7 +41,27 @@ app.use( ctx => {
 exports.handler = handler(app);
 ```
 
-<!-- ### HTTP/2 Push
+### Hello world on Bun
+
+To use Curveball with [Bun](https://bun.sh/), use the kernel package:
+
+```typescript
+import { Application } from '@curveball/kernel';
+const app = new Application();
+// Add all your middlewares here!
+app.use( ctx => {
+  ctx.response.body = {msg: 'hello world!'};
+});
+export default {
+  port: 3000,
+  fetch: app.fetch.bind(app)
+};
+```
+
+Some more information and examples can be found in [this article](https://evertpot.com/bun-curveball-framework).
+
+
+### HTTP/2 Push
 
 ```typescript
 const app = new Application();
@@ -58,6 +79,8 @@ app.use( ctx => {
 
 });
 ```
+
+
 
 The callback to `ctx.push` will only get called if Push was supported by the
 client, and because it creates a new 'context', any middleware can be attached
@@ -140,7 +163,7 @@ class MyController extends Controller {
 
 ### Emitting errors
 
-To emit a HTTP error, it's possible to set `ctx.status`, but easier to just
+To emit an HTTP error, it's possible to set `ctx.status`, but easier to just
 throw a related exception.
 
 
@@ -183,7 +206,7 @@ app.use( async (ctx, next) => {
 
   // Let the entire middleware stack run
   await next();
-
+ 
   // HTML encode JSON responses if the client was a browser.
   if (ctx.accepts('text/html') && ctx.response.type ==== 'application/json') {
     ctx.response.type = 'text/html';
@@ -249,4 +272,4 @@ console.log(foo);
 [9]: https://curveballjs.org/
 [10]: https://github.com/curveball/core
 [11]: https://badgateway.net/
-[12]: https://github.com/curveball/a12n-server -->
+[12]: https://github.com/curveball/a12n-server

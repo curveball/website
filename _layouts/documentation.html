@@ -21,6 +21,10 @@ menu:
 {% include navbar.html %}
 
 <main class="docs-page-wrapper">
+	<input type="checkbox" name="sidebar-toggle" id="sidebar-toggle"/>
+	<label for="sidebar-toggle" title="toggle Documentation navigation sidebar" class="button alternate">
+		<span class="genericon genericon-menu"></span>
+	</label>
 	<nav class="docs-navbar">
 		<div style="position: sticky; top: 60px;">
 			{% for item in layout.menu %}

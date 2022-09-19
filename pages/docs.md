@@ -6,6 +6,7 @@ layout: documentation
 
 ## Quick start
 
+{:.quick-start} 
 - [Get started](/docs/getting-started/basics)
 - [View Examples](/docs/examples)
 - [Browse Middlewares](/docs/middleware)
