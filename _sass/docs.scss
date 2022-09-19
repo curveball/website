@@ -38,6 +38,13 @@
     gap: 2rem;
     padding: 0 2rem 4rem;
     
+    .highlight {
+      max-width: 44rem;
+    } 
+    img {
+      max-width: 100%;
+    }
+
     // .content-container {
     //   min-width: 0;
     // }
@@ -54,7 +61,16 @@
           li {
             display: flex;
             align-items: baseline;
-            gap: .25rem
+            gap: .25rem;
+            padding: 0 0 1ex;
+            &::before {
+              content: "\f100";
+              font-family: 'Genericons';
+              line-height: 1;
+            }
+            a { 
+              flex: 1;
+            }
           }
         }
       }
