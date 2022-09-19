@@ -6,6 +6,9 @@ highlighter: rouge
 gist:
   noscript: false
 
+plugins:
+  - jekyll-sass-converter
+
 # Permalinks
 permalink:	/blog/:title
 
@@ -22,8 +25,6 @@ author:
   company:
     name: Bad Gateway
     url: https://badgateway.net
-
-include: ['_sass', '*.scss']
 
 copyright:
   author:         Curveball

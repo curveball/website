@@ -3,3 +3,6 @@ _site/
 .sass-cache/
 media/*
 /vendor/bundle/
+
+# vim
+.*.swp

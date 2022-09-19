@@ -1,7 +1,10 @@
-@use './modules/base';
-@use './modules/docs';
-@use './modules/genericons';
-@use './modules/menu';
-@use './modules/middleware';
-@use './modules/navbar';
-@use './modules/syntax';
+---
+---
+
+@import 'docs';
+@import 'base';
+@import 'genericons';
+@import 'menu';
+@import 'middleware';
+@import 'navbar';
+@import 'syntax';
