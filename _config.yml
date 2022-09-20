@@ -57,12 +57,6 @@ collections_dir: collections
 collections:
   getting-started:
     output: true
-    order: 
-    - basics.md
-    - aws-lamdba.md
-    - azure.md
-    - bun.md
-    - node.md
   middleware:
     output: true
   api:

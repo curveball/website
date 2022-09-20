@@ -1,20 +1,8 @@
 ---
 layout: documentation
-title: Basics
+title: Introduction
 permalink: /docs/getting-started/basics
-nav-links:
-  - title: Overview
-    link: overview
-  - title: Installation
-    link: installation
-  - title: Handling requests
-    link: handling-requests
-  - title: Internal subrequests
-    link: internal-subrequests
-  - title: 1xx Informational responses
-    link: 1xx-informational-responses
-  - title: Official middleware
-    link: official-middleware
+
 ---
 
 ## Overview
