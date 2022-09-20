@@ -2,6 +2,6 @@
 title: null
 layout: 'redirect'
 permalink: about/
-redir_to: '/getting-started/basics'
+redir_to: /docs/getting-started
 sitemap: false
 ---
