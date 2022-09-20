@@ -13,11 +13,16 @@ html, body {
   height: auto;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #828282;
+  color: #737373;
   font-size: 13pt;
   line-height: 1.7em;
   letter-spacing: -0.015em;
   scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #bf616a;
+  color: white;
 }
 
 header.hero {
@@ -95,7 +100,7 @@ p {
 }
 
 a {
-  color: #ff4e60;
+  color: #c84754;
 
   &:not(.button) {
     text-decoration-line: underline;
@@ -154,6 +159,9 @@ ul {
 
   li {
     list-style: square;
+    &::marker {
+      color: #ff4e607d;
+    }
   }
 
   &.inline-blocks {
@@ -178,6 +186,9 @@ ul {
 }
 
 h2 + ul,
+h3 + ul,
+h4 + ul,
+h5 + ul,
 p + ul {
   padding: 0 0 0 1rem;
 }
@@ -536,24 +547,53 @@ blockquote {
   &:hover {
     border-color: #e5e5e5;
   }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 1.75;
+    color: #444;
+  }
+
+  &.note {
+    &::before {
+      border-right: 2px dotted var(--accent-color, #777);
+    }
+  }
 }
 
 .note {
   &::before {
-    content: '\f455';
+    content: '\f100';
     font-family: 'Genericons';
     border-width: 0 2px 0 0;
     border-color: inherit;
     font-size: 1.2em;
-    padding: 0 0.7ex 0 0;
+    padding: 0 .7ex 0 0;
     vertical-align: middle;
-    color: var(--accent-color, #006699);
-    border-right: 2px dotted var(--accent-color);
+    color: var(--accent-color, #777);
+  }
+}
+
+.comment {
+  --accent-color: #006699;
+  &::before {
+    content: '\f300';
+  }
+}
+
+.hint {
+  --accent-color: #ff4e60;
+  &::before {
+    content: '\f308';
   }
 }
 
 .info {
   --accent-color: #006699;
+  &::before {
+    content: '\f455';
+  }
 }
 
 .warning {
@@ -564,7 +604,6 @@ blockquote {
 }
 
 .bad {
-  --bg-color: #F66A81;
   --accent-color: #ff4e60;
   &::before {
     content: '\f405';
@@ -575,13 +614,6 @@ blockquote {
   &::before {
     content: '\f418';
   }
-}
-
-blockquote p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  line-height: 1.75;
-  color: #777;
 }
 
 code, pre {
