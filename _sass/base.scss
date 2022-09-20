@@ -269,7 +269,7 @@ ul.actions li {
  padding-top: 60px;
 }
 
-#examples .highlight {
+#examples > .highlight {
  padding: 40px;
  border-radius: 3px;
 }
@@ -515,24 +515,74 @@ abbr[title] {
   border-bottom: 1px dotted #e5e5e5;
 }
 
-blockquote, pre, .message {
-  padding: 10px 18px;
-  margin: 0px 0px 30px -20px;
-  margin-top: inherit;
+blockquote, pre {
+  padding: 1rem;
   color: #7a7a7a;
 }
 
 blockquote {
-  border-left: 10px solid #C7F66A;
+  background: #f5f5f5;
+  margin: 3rem 10% 3rem 0;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-radius: 0.4ex;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  box-shadow: 0 2px 30px -1px #0001;
+  transition: border .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    border-color: #e5e5e5;
+  }
+}
+
+.note {
+  &::before {
+    content: '\f455';
+    font-family: 'Genericons';
+    border-width: 0 2px 0 0;
+    border-color: inherit;
+    font-size: 1.2em;
+    padding: 0 0.7ex 0 0;
+    vertical-align: middle;
+    color: var(--accent-color, #006699);
+    border-right: 2px dotted var(--accent-color);
+  }
+}
+
+.info {
+  --accent-color: #006699;
+}
+
+.warning {
+  --accent-color: #ff4e60;
+  &::before {
+    content: '\f456';
+  } 
+}
+
+.bad {
+  --bg-color: #F66A81;
+  --accent-color: #ff4e60;
+  &::before {
+    content: '\f405';
+  }
+}
+.good {
+  --accent-color: #46e2e4;
+  &::before {
+    content: '\f418';
+  }
 }
 
 blockquote p {
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-.message {
-  border-left: 10px solid #F66A81;
+  line-height: 1.75;
+  color: #777;
 }
 
 code, pre {
@@ -571,7 +621,7 @@ pre code {
 }
 
 .highlight {
-  margin-bottom: 1rem;
+  margin: 2rem 0rem;
   border-radius: 4px;
 }
 

@@ -15,6 +15,10 @@
     }
   }
 
+  h2, h3 {
+    margin: 4rem 0 2rem;
+  }
+  
 }
 
 .docs-page-wrapper .docs-navbar {
@@ -30,6 +34,10 @@
   .page-title {
     margin: 0 auto;
     padding: 0 2rem;
+
+    h4 {
+      color: #777;
+    }
   }
   
   .page-container {

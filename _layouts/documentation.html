@@ -1,12 +1,16 @@
 ---
 layout: default
 menu:
-  - title:      Getting Started
-    url_base:   /docs/getting-started
-    collection: getting-started
-    collection_items: 
-    - title: Introduction
-      url: basics
+  - title:      Documentation
+    url_base:   /docs
+    collection: documentation
+    collection_items:
+
+    - title: Test
+      url: testdocs
+
+    - title: Getting Started
+      url: getting-started
 
     - title: Node
       url: node
@@ -18,20 +22,21 @@ menu:
     - title: AWS Lambda
       url: aws-lambda
 
-    - title: Azure
+    - title: Azure Functions
       url: azure
 
-  - title:       API
-    url_base:    /docs/api
-    collection:  api
+    - title: Next Steps
+      url: next-steps
+
+    - title: Controller
+      url: controller
+
+    - title: Application Structure
+      url: application-structure
 
   - title:      Middleware
     url_base:   /docs/middleware
     collection: middleware
-
-  - title:      Examples
-    url_base:   /docs/examples
-    collection: examples
 ---
 
 {% include navbar.html %}
@@ -50,11 +55,11 @@ menu:
 						<summary>{{ item.title }}</summary>
 						<div>
 							<ul>
-							<!-- 
-								define collection_items inside a `menu` item 
-								in the front matter to manually sort the 
+							<!--
+								define collection_items inside a `menu` item
+								in the front matter to manually sort the
 								collection menu items
-							--> 
+							-->
 							{% if item.collection_items %}
 								{% for collection-item in item.collection_items %}
 								<li {% if collection-item.badge  %} data-badge={{collection-item.badge}} {% endif %}>
@@ -62,7 +67,7 @@ menu:
 								</li>
 								{% endfor %}
 							<!--
-								otherwise, look in the collections folder 
+								otherwise, look in the collections folder
 								and use default sort
 							-->
 							{% else %}
