@@ -1,0 +1,28 @@
+<div class="navbar">
+  <a href="/"><img src="/assets/images/logo.svg" alt="Curveball logo"/></a>
+  <div class="nav-items">
+    {% for item in site.menu %}
+      {% if item.collection %}
+        <div class="dropdown nav-item">
+            <a class="dropbtn {% if page.permalink contains item.url %}active{% endif %}" href="{{ item.url }}">
+            {{ item.title }}
+            <span class="genericon genericon-expand"></span>
+          </a>
+          <div class="dropdown-content">
+            {% for collection-item in site[item.collection] %}
+              <a href="{{ collection-item.url }}" {% if page.url == collection-item.url %}class="active"{% endif %}>{{ collection-item.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      
+      {% else %}
+        <div class="nav-item">
+          <a href="{{ item.url }}" class="{% if page.permalink == item.url %}active{% endif %} {% if item.url == '/docs' and page.permalink contains '/docs' %}active{% endif %}">
+            {{ item.title }}
+          </a>
+        </div>
+      {% endif %}
+      
+      {% endfor %}
+  </div>
+</div>

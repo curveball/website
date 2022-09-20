@@ -2,57 +2,69 @@
 layout: default
 title: Home
 ---
+
+{% include navbar.html %}
 <header class="hero">
-	{% include top.html %}
 	<div class="poster">
-		<a class="logo" href="{{ site.url }}{{ site.baseurl }}">
-			<img src="{{ site.icon }}">
-		</a>
-		<h1>Curveball is a micro-framework for building APIs with Typescript</h1>
+		<h1 class="logo">
+			<img src="{{ site.icon }}" alt="{{site.title}} logo" title="{{ site.title}} - {{ site.tagline }}">
+		</h1>
+		<h1>A micro-framework for building APIs with Typescript</h1>
 		<ul class="actions">
-			<li><a href="#install" class="button primary icon fa-download"><span class="genericon genericon-cloud-download"></span> Install</a></li>
+			<li><a href="#install" class="button primary icon fa-download"><span class="genericon genericon-cloud-download"></span> Install now</a></li>
 			<li><a href="#about" class="button"><span class="genericon genericon-expand"></span> Learn More</a></li>
 		</ul>
 	</div>
 </header>
 
 <section id="about" class="wrapper">
-        <div class="inner">
-          <header class="major">
-                  <h2>Curveball is a framework for building APIs in Node.js.<br>
-                  Curveball makes it easy to build developer-friendly HTTP APIs that are simple and robust.
-                  </h2>
-          </header>
-          <p>
-            <h3>Design goals</h3>
-            <ul>
-              <li><strong>A small core.</strong> Curveball is a micro-framework.</li>
-              <li><strong>Batteries included.</strong> Optional plugins for lots of common tasks.</li>
-              <li><strong>Gets HTTP.</strong> Use  modern features such as HTTP/2 Push, Content-Negotation, 1xx responses, the Prefer header and Links headers.</li>
-              <li><strong>Serverless friendly.</strong> Built-in AWS Lambda support.</li>
-            </u>
-          </p>
-        </div>
+	<div class="inner">
+		<header class="major">
+				<h2>Curveball makes it easy to build developer-friendly HTTP APIs that are simple and robust.</h2>
+		</header>
+	</div>
+		<ul class="inline-blocks">
+			<li>
+				<span class="genericon genericon-heart" style="color: #ff4e60"></span>
+				<strong>A small core.</strong> Curveball is a micro-framework.
+			</li>
+			<li>
+				<span class="genericon genericon-plugin" style="color: #51afb1"></span>
+				<strong>Batteries included.</strong> Optional plugins for lots of common tasks.
+			</li>
+			<li>
+				<span class="genericon genericon-flag" style="color: rgb(29, 30, 58);"></span>
+				<strong>Gets HTTP.</strong> Use  modern features such as HTTP/2 Push, Content-Negotation, 1xx responses, the Prefer header and Links headers.
+			</li>
+			<li>
+				<span class="genericon genericon-fastforward" style="color: rgba(29, 30, 58, 0.47)"></span>
+				<strong>Serverless friendly.</strong> Built-in AWS Lambda support.
+			</li>
+		</u>
 </section>
+
 <section id="install" class="wrapper">
 	<div class="inner">
 		<header class="major">
-			<h2>Installation</h2>
+			<h2>Install Curveball</h2>
 		</header>
-		<pre><code>npm install @curveball/core</code></pre>
+		<code>
+			<pre>npm install @curveball/core</pre>
+		</code>
 	</div>
-
 </section>
-<section id="status" class="wrapper special cta">
+
+<section id="info" class="wrapper special cta">
 	<header class="major">
-		<h2>Project status</h2>
-		<p>Curveball is currently in Beta. It's close to a stable release, and any API changes will be minor. It's ready for production.</p>
+		<h2>Get started</h2>
+		<p><em>Every Curveball needs a Pitcher</em></p>
 	</header>
 	<ul class="actions">
-		<li><a class="button" href="https://github.com/curveball/core" target="_blank" rel="noopener"><span class="genericon genericon-phone"></span> Documentation</a></li>
-		<li><a class="button primary icon" href="https://github.com/curveball/starter" target="_blank" rel="noopener"> Starter template <span class="genericon genericon-code"></span> </a></li>
+		<li><a class="button primary icon" href="/docs" rel="noopener"><span class="genericon genericon-standard"></span> Read the docs</a></li>
+		<li><a class="button icon" href="https://github.com/curveball/starter" target="_blank" rel="noopener"> Download starter template <span class="genericon genericon-code"></span> </a></li>
 	</ul>
 </section>
+
 <section id="examples" class="wrapper">
 	<div class="inner">
 
@@ -61,10 +73,12 @@ title: Home
 		</header>
 
 		<section>
-                    {{ content}}
+    	{{ content}}
 		</section>
 	</div>
 </section>
+
+
 
 <!-- posts? -->
 
@@ -79,7 +93,7 @@ title: Home
 			<br>
 		{% endfor %}
 	</div>
-	<!-- 
+	<!--
 	<nav class="pagination" role="navigation">
 		{% if paginator.next_page %}
 			<a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">&larr; Older posts</a>
@@ -96,6 +110,4 @@ title: Home
 	 -->
 </div>
 
-<footer>
-	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>.</p>
-</footer>
+{% include footer.html %}

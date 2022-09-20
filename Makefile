@@ -1,17 +1,16 @@
-JEKYLL_VERSION?=3.8
-
 all: run
 
-build: assets/css/style.css
+run: docker-run
 
-assets/css/style.css: assets/css/style.scss _sass/*.scss
-	sass assets/css/style.scss assets/css/style.css
 
-sass-watch:
-	sass --watch assets/css/style.scss:assets/css/style.css
+DOCKER_IMAGE_NAME=curveball-website
 
-run: build
-	docker run --rm -p4000:4000 \
-	  --volume="${PWD}:/srv/jekyll" \
-	  -it jekyll/jekyll:${JEKYLL_VERSION} \
-	  jekyll serve --watch --future
+
+docker-build: Dockerfile
+	docker build -t $(DOCKER_IMAGE_NAME) .
+
+docker-run: docker-build
+	docker run \
+	  -p4000:4000 \
+	  --volume="${PWD}:/opt/www/src" \
+	  -it --rm --name $(DOCKER_IMAGE_NAME)-01 $(DOCKER_IMAGE_NAME)

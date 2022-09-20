@@ -1,7 +1,14 @@
 ---
 title: Home
 layout: home
+permalink: /
 ---
+
+{:.list-class-name}
+- [Hello World](#hello-world)
+- [Hello World on AWS Lambda](#hello-world-on-aws-lambda)
+- [Hello World on Bun](#hello-world-on-bun)
+
 
 ### Hello world
 
@@ -156,7 +163,7 @@ class MyController extends Controller {
 
 ### Emitting errors
 
-To emit a HTTP error, it's possible to set `ctx.status`, but easier to just
+To emit an HTTP error, it's possible to set `ctx.status`, but easier to just
 throw a related exception.
 
 
