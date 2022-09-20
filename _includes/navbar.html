@@ -4,7 +4,7 @@
     {% for item in site.menu %}
       {% if item.collection %}
         <div class="dropdown nav-item">
-            <a class="dropbtn {% if page.url contains item.url %}active{% endif %}" href="{{ item.url }}">
+            <a class="dropbtn {% if page.permalink contains item.url %}active{% endif %}" href="{{ item.url }}">
             {{ item.title }}
             <span class="genericon genericon-expand"></span>
           </a>
@@ -14,13 +14,15 @@
             {% endfor %}
           </div>
         </div>
-
+      
       {% else %}
         <div class="nav-item">
-          <a href="{{ item.url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
+          <a href="{{ item.url }}" class="{% if page.permalink == item.url %}active{% endif %} {% if item.url == '/docs' and page.permalink contains '/docs' %}active{% endif %}">
+            {{ item.title }}
+          </a>
         </div>
       {% endif %}
-
-	  {% endfor %}
+      
+      {% endfor %}
   </div>
 </div>
