@@ -53,9 +53,11 @@
       max-width: 100%;
     }
 
-    // .content-container {
-    //   min-width: 0;
-    // }
+    .content-container {
+      &>*:first-child:last-child {
+        width: 44rem;
+      }
+    }
 
     /* docs page internal links navbar */
     .page-nav-container {
@@ -141,7 +143,7 @@
 
       a {
         --bs-color: transparent;
-        color: #777;
+        color: #626262;
         display: block;
         padding: 0 0 0 1.5ex;
         transform: translateX(-2px);
@@ -150,14 +152,17 @@
 
         &:hover {
           --bs-color: currentColor;
+          background-color: #ffffff33;
           color: #444;
           transform: translateX(2px);
         }
-
+        
         &.active,
-        &:active {
+        &:active,
+        &:hover:focus {
           --bs-color: currentColor;
-          color: #ff4e60!important;
+          background-color: #ffffff99;
+          color: #c84754!important;
           transform: translateX(4px);
         }
 
@@ -206,6 +211,12 @@
   border-radius: 0.4ex;
   font-weight: bold;
   line-height: 1.5;
+}
+
+[data-badge]:has(.active)::after {
+  color: #ff4e607d;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px currentColor;
 }
 
 /* Mobile styles */
