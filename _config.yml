@@ -51,7 +51,7 @@ menu:
   - title:        Home
     url:          /
   - title:        Docs
-    url:          /docs
+    url:          /docs/getting-started
 
 collections_dir: collections
 collections:

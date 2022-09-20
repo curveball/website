@@ -17,7 +17,7 @@
       
       {% else %}
         <div class="nav-item">
-          <a href="{{ item.url }}" class="{% if page.permalink == item.url %}active{% endif %} {% if item.url == '/docs' and page.permalink contains '/docs' %}active{% endif %}">
+          <a href="{{ item.url }}" class="{% if page.permalink == item.url %}active{% endif %} {% if item.title == 'Docs' and page.permalink contains '/docs' %}active{% endif %}">
             {{ item.title }}
           </a>
         </div>
