@@ -23,12 +23,13 @@ What you need to know
 This documentation assumes you have an understanding of the main HTTP concepts
 such as:
 
-* Requests, including the URL, method, headers and body.
-* Responses, including the status, headers and body. (and what they mean)
+* **Requests**, including the URL, method, headers and body.
+* **Responses**, including the status, headers and body. (and what they mean)
 
 In most cases this documentation also assumes you know Typescript.
 
-If any of these concepts are foreign, this documentation is likely not a good
+{:.note.warning}
+> If any of these concepts are foreign, this documentation is likely not a good
 jumping off point.
 
 Picking an engine
