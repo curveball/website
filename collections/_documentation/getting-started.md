@@ -1,9 +1,62 @@
 ---
 layout: documentation
-title: Introduction
-permalink: /docs/getting-started/basics
+title: Getting started
+permalink: /docs/getting-started
 
 ---
+
+Curveball is a micro HTTP framework for Typescript. You can compare it to
+[Express][1], [Koa][2] or [Fasify][3].
+
+Curveball lets you build the same types of applications as these frameworks,
+but it's especially well suited to build APIs. It embraces REST, and comes
+with an number of quality of life features that make building advanced HTTP
+APIs a joy.
+
+Curveball runs on [Node][node], but it has a very minimal 'kernel', which makes
+it run natively on [AWS Lambda][lambda] and [Bun][bun], unlike other frameworks
+which often don't work without bulky compatibility layers.
+
+What you need to know
+---------------------
+
+This documentation assumes you have an understanding of the main HTTP concepts
+such as:
+
+* Requests, including the URL, method, headers and body.
+* Responses, including the status, headers and body. (and what they mean)
+
+In most cases this documentation also assumes you know Typescript.
+
+If any of these concepts are foreign, this documentation is likely not a good
+jumping off point.
+
+Picking an engine
+-----------------
+
+Curveball currently supports a few different runtime engines. They are all
+a little different, so there is separate set-up instructions for each of them.
+
+If you are not sure which to start with, Node is by far the most commmon.
+
+* [Node][node]
+* [Bun][bun]
+* [AWS Lambda][lambda]
+* [Azure Functions][azure]
+
+Choose your engine to continue this guide.
+
+[1]: https://expressjs.com/
+[2]: https://koajs.com/
+[3]: https://www.fastify.io/
+
+[node]: /docs/node
+[bun]: /docs/bun
+[lambda]: /docs/aws-lambda
+[azure]: /docs/azure-functions
+
+
+<!--
 
 ## Overview
 
@@ -17,7 +70,7 @@ possible to use the framework with plain JavaScript.
 
 ``` bash
 $ npm install @curveball/core
-``` 
+```
 
 ## Handling requests
 
@@ -65,7 +118,7 @@ import { Application, MemoryRequest } from '@curveball/core';
 const app = new Application();
 const request = new MemoryRequest('POST', '/foo/bar', { 'Content-Type': 'text/html' }, '<h1>Hi</h1>');
 const response = await app.subRequest(request);
-``` 
+```
 
 ## 1xx Informational responses
 
@@ -117,3 +170,6 @@ needed.
 [http-100]: https://tools.ietf.org/html/rfc7231#section-6.2.1 "RFC7231: 100 Continue"
 [http-102]: https://tools.ietf.org/html/rfc2518#section-10.1 "RFC2518: 102 Processing"
 [http-103]: https://tools.ietf.org/html/rfc8297 "RFC8297: 103 Early Hints"
+
+
+-->

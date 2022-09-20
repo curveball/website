@@ -55,7 +55,7 @@ menu:
 
 collections_dir: collections
 collections:
-  getting-started:
+  documentation:
     output: true
   middleware:
     output: true

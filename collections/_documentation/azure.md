@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Azure
-permalink: /docs/getting-started/azure
+permalink: /docs/azure
 ---
 
 TODO
