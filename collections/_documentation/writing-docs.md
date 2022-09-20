@@ -100,7 +100,7 @@ Indicates stuff you want to point out.
 **`.note.info`**
 
 {:.note.info}
-Use **`.info** &ndash; for stuff you want to point out, but differently.
+Use **`.info`**  for stuff you want to point out, but differently.
 
 {:.note.info}
 > In most cases this documentation <del>also</del> assumes you know Typescript.
