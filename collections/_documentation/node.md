@@ -58,7 +58,7 @@ that contains all the information about the HTTP request (`ctx.request`) and
 the response (`ctx.response`).
 
 {:.note.suggestion}
-> The `.use()` method requires a `ctx` object as (it's) argument. The `ctx` object
+> The `.use()` method requires a `ctx` object as (its) argument. The `ctx` object
 contains all the information about the HTTP request and
 the response, accessible via `ctx.request` and `ctx.response`.
 
