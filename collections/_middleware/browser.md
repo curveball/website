@@ -16,7 +16,7 @@ HTML. Browsers do this by sending an `Accept: text/html` header.
 If this middleware spots this, it will kick in and auto-generate a great looking
 HTML document.
 
-If this header was not provides, this middleware does nothing.
+If this header was not provided, this middleware does nothing.
 
 It automatically decorates the following formats:
 
