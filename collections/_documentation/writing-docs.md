@@ -130,4 +130,13 @@ jumping off point._
 {:.note.bad}
 > Not dumb here. Please do not dumb here.
 
+**`.note.fixme`**
+
+{:.note.fixme}
+> This should be changed before merging to `main`.
+
+**`.note.suggestion`**
+
+{:.note.suggestion}
+> _Here is my suggestion for a copy change in the paragraph above ☝_
 

@@ -50,20 +50,36 @@ app.use((ctx: Context) => {
 app.listen(4000);
 ```
 
-In Curveball (like Koa) everything is a middleware, so to respond to a request
+In Curveball (like Koa) _everything_ is a middleware, so to respond to a request
 you use the `.use()` method.
 
 When this method gets called, you are given a `ctx` argument. This is an object
 that contains all the information about the HTTP request (`ctx.request`) and
 the response (`ctx.response`).
 
-In this case we are setting the reponse body to contain an object
-`{msg: 'Hello world!'}`. By default this will be turned into a JSON string.
+{:.note.suggestion}
+> The `.use()` method requires a `ctx` object as (its) argument. The `ctx` object
+contains all the information about the HTTP request and
+the response, accessible via `ctx.request` and `ctx.response`.
 
-Lastly, you call `listen` to listen on a specific TCP port. After this call
-you can go to <http://localhost:4000> to see if it worked.
 
-Now we've covered the Node-specific documentation, go read [next steps][2] to
+In this case we are setting the reponse `body` to contain an object.
+```js
+ctx.response.body = {msg: 'Hello world!'}
+``` 
+
+By default this will be turned into a JSON string.
+
+{:.note.suggestion}
+>'this' ☝ is a bit vague. Is it significant to mention here? Are all curveball responses JSON by default? Consider adding a `.note.hint` like "(Did you know,) All Curveball responses are JSON by default btw (?)"
+
+
+Lastly, call `listen()` to listen on a specific TCP port. 
+
+After this, open <http://localhost:4000> to see if it worked.
+
+{:.note.good}
+> Now we've covered the Node-specific documentation, go read [next steps][2] to
 go over all the common use-cases.
 
 [1]: https://github.com/curveball/starter "Curveball Starter Template"

@@ -64,6 +64,7 @@ In this case we are setting the reponse body to contain an object
 The last step is that we export a function called 'handler', which AWS will be
 call for every request.
 
+{:.note.good}
 Now we've covered the Lambda-specific documentation, go read [next steps][2] to
 go over all the common use-cases.
 

@@ -29,23 +29,26 @@ such as:
 In most cases this documentation also assumes you know Typescript.
 
 {:.note.warning}
-> If any of these concepts are foreign, this documentation is likely not a good
-jumping off point.
+> _If any of these concepts are foreign, this documentation is likely not a good
+jumping off point._
 
 Picking an engine
 -----------------
 
 Curveball currently supports a few different runtime engines. They are all
-a little different, so there is separate set-up instructions for each of them.
+a little different, so they each have their own set-up instructions.
 
-If you are not sure which to start with, Node is by far the most commmon.
+---
+
+### Choose your engine to continue this guide.
 
 * [Node][node]
 * [Bun][bun]
 * [AWS Lambda][lambda]
 * [Azure Functions][azure]
 
-Choose your engine to continue this guide.
+{:.note.info}
+> If you are not sure which to start with, [Node][node] is by far the most common.
 
 [1]: https://expressjs.com/
 [2]: https://koajs.com/

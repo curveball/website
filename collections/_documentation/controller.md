@@ -13,17 +13,17 @@ help you better structure your code.
 The following example shows a simple controller for managing 'articles'.
 We want to support the following HTTP operations:
 
-* `GET /articles` - Retrieve a list of aticles.
-* `GET /articles/:id` - Retrieve a specific article.
-* `POST /articles` - Create a new article.
-* `PUT /articles/:id` - Update an article.
-* `DELETE /articles/:id` - Delete an article.
+* `GET /articles` &ndash; Retrieve a list of aticles.
+* `GET /articles/:id` &ndash; Retrieve a specific article.
+* `POST /articles` &ndash; Create a new article.
+* `PUT /articles/:id` &ndash; Update an article.
+* `DELETE /articles/:id` &ndash; Delete an article.
 
 The service
 -----------
 
 To support this article API, we're making a very basic 'service' that handles
-retrieval and storage. Lets assume this exists in a 'article-service.ts' file.
+retrieval and storage. Let's assume this exists in a 'article-service.ts' file.
 
 
 ```typescript
@@ -127,13 +127,13 @@ class ArtcileCollection extends Controller {
 }
 ```
 
-As you can see above, methods in the controller present HTTP methods. `post`
+As you can see above, methods in the controller present HTTP methods. `post()`
 will be automatically called for the `HTTP POST` method.
 
 Note that all methods here were marked `async`. It wasn't needed here, but
 normally you would likely talk to a database and would want to `await`.
 
-Lets take a look at the Article controller:
+Let's take a look at the Article controller:
 
 
 ```typescript
@@ -174,8 +174,8 @@ class ArticleItem extends Controller {
 }
 ```
 
-Lets put it all together
-------------------------
+Putting it all together
+-----------------------
 
 
 ```typescript
