@@ -44,7 +44,7 @@ menu:
 		<span class="genericon genericon-menu"></span>
 	</label>
 	<nav class="docs-navbar">
-		<div style="position: sticky; top: 60px;">
+		<div class="navbar-sticky-wrapper">
 			{% for item in layout.menu %}
 				<!-- Expandable Sections-->
 				{% if item.collection %}
@@ -128,9 +128,11 @@ menu:
 <script>
 
 	const headings = document.querySelectorAll('.content-container h2');
-	const pageNavList = document.querySelector('.page-nav-container ul');
+	const pageNav = document.querySelector('.page-nav-container');
+	const pageNavHeader = pageNav.querySelector('h5');
+	const pageNavMenu = pageNav.querySelector('ul');
 	// only run if docs page doesn't have it's own list of nav-links
-	if(pageNavList.childElementCount === 0 && headings.length > 0) {
+	if(pageNavMenu.childElementCount === 0 && headings.length > 0) {
 
 		for (const h of headings) {
 			let li = document.createElement('li');
@@ -138,8 +140,12 @@ menu:
 			a.href = `#${h.id}`;
 			a.innerHTML = h.textContent;
 			li.appendChild(a);
-			pageNavList.appendChild(li);
+			pageNav.querySelector('ul').appendChild(li);
 		}
+	} 
+	
+	if(!pageNavMenu.childElementCount && !headings.length) {
+		pageNavHeader.style.display = 'none';
 	}
 
 </script>

@@ -3,5 +3,5 @@ layout: documentation
 title: Azure
 permalink: /docs/azure
 ---
-
-TODO
+{:.note}
+Curveball &times; Azure documentation coming soon!

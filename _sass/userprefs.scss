@@ -1,0 +1,43 @@
+@media (prefers-color-scheme: dark) {
+
+  .navbar, 
+  footer {
+    background-color: var(--purple-800);
+    filter: grayscale(1);
+
+    > h1, h2, h3, h4 {
+      color: #fffd!important;
+    }
+  }
+
+  footer a {
+    a {
+      color: #333;
+    }
+  }
+
+  body {
+    color: #444;
+  }
+
+  section.wrapper:not(.special.cta), 
+  #middle, 
+  .docs-page-wrapper {
+    filter: invert(.9);
+    
+    a {color: red}
+
+    h2 {
+      color: #222;
+    }
+
+    strong {
+      color: black;
+    }
+
+  }
+  
+  .special.cta {
+    border-bottom-color: var(--purple-800);
+  }
+}

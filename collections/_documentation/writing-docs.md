@@ -140,4 +140,3 @@ jumping off point._
 {:.note.suggestion}
 > _Here is my suggestion for a copy change in the paragraph above ☝_
 
-
