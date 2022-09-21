@@ -36,10 +36,11 @@ app.use(
 
 Serving files from a different directory
 ---------------
-It is possible to serve files from a directory that doesn't math your request path.
+It is possible to serve files from a directory that doesn't match your request path.
 
 
 For example:
+
 | Static Dir          | Request URI       |
 |---------------------|-------------------|
 | `/home/app/static`  | `/assets/app.css` |
@@ -69,8 +70,8 @@ function returns a middleware. It accepts a dictionary of configuration options.
 
 ### Options
 
-- `staticDir`: Absolute path to assets directory. Assets cannot be served above
+- `staticDir` &ndash; Absolute path to assets directory. Assets cannot be served above
   this directory.
-- `pathPrefix`: Request path to match if it differs from the static directory.
-- `maxAge`: If specified, this will cause a `Cache-Control: max-age=n` header
+- `pathPrefix` &ndash; Request path to match if it differs from the static directory.
+- `maxAge` &ndash; If specified, this will cause a `Cache-Control: max-age=n` header
   to be added, where `n` is the value of `maxAge`.

@@ -31,19 +31,13 @@ app.use((ctx: Context) => {
 ```
 
 The `Context` object here contains all the infromation related to the HTTP request
-and response, for example:
+and response:
 
-* `ctx.request.path` - Request URI (just the path)
-* `ctx.request.query` - Query parameters
-* `ctx.request.method` - HTTP method
-* `ctx.request.headers` - Request headers
-* `ctx.request.body` - Request body
+| Request | Response |
+| ------- | -------- |
+| `ctx.request.path` - Request URI (just the path) <br />`ctx.request.query` - Query parameters<br />`ctx.request.method` - HTTP method<br />`ctx.request.headers` - Request headers<br />`ctx.request.body` - Request body | `ctx.response.status` - The response status code<br />`ctx.response.headers` - Response headers<br />`ctx.response.body` - Response body |
 
-* `ctx.response.status` - The response status code
-* `ctx.response.headers` - Response headers
-* `ctx.response.body` - Response body
-
-The basic purpose of a middleware is to read things from `ctx.request` and set
+The basic purpose of a middleware is to _read_ things from `ctx.request` and _set_
 things in `ctx.response`.
 
 There's also many shortcuts in `ctx` for things that are unambigious, such as:
@@ -52,11 +46,12 @@ There's also many shortcuts in `ctx` for things that are unambigious, such as:
 * `ctx.path`
 * `ctx.status`
 
-This documentation does not (yet) have a  complete reference to the  `ctx`,
+{:.note.comment}
+> This documentation does not (yet) have a  complete reference to the  `ctx`,
 `ctx.request` and `ctx.response` documentation. We recommend taking a look
 at the [source][1] to see what's available.
 
-## Helpful middleware
+## Useful middleware
 
 2 middlewares you'll pretty much always want.
 
@@ -70,7 +65,7 @@ bodyparser will let you read request bodies.
 This is how you use them:
 
 ```typescript
-import { Application } from '@curveball/core'; // on lambda or bun this is 'kernel'
+import { Application } from '@curveball/core';
 import accessLog from '@curveball/accesslog';
 import bodyParser from `@curveball/bodypaser`;
 
@@ -80,6 +75,8 @@ app.use(accessLog);
 app.use(bodyParser);
 ```
 
+{:.note.hint}
+> On **lambda** or **bun** use **`@curveball/kernel`** instead of `@curveball/core`
 
 ## A route and a GET request
 
@@ -99,7 +96,7 @@ npm i @curveball/router
 
 ```typescript
 import router from '@curveball/router';
-import { Application } from '@curveball/core'; // on lambda or bun this is 'kernel'
+import { Application } from '@curveball/core'; 
 
 const app = Application();
 app.use(router.get('/article/:id', async ctx => {
@@ -114,22 +111,25 @@ app.use(router.get('/article/:id', async ctx => {
 // engine-specific code here
 ```
 
+{:.note.hint}
+> On **lambda** or **bun** use **`@curveball/kernel`** instead of `@curveball/core`
+
 By default Curveball will respond with `200 OK` _if_ a response body was set.
 It also defaults the `Content-Type` to `application/json`.
 
-Note that we made the middleware async. _all_ Curveball middlewares may be
+Note that we made the middleware `async`. **_All_** Curveball middlewares may be
 async.
 
 A `PUT` request on the same route
 ----------------------------------
 
-Lets assume we also want to do a `PUT` request here to let people update
+Let's assume we also want to do a `PUT` request here to let people update
 articles.
 
 
 ```typescript
 import router from '@curveball/router';
-import { Application } from '@curveball/core'; // on lambda or bun this is 'kernel'
+import { Application } from '@curveball/core'; 
 
 const app = Application();
 app.use(bodyParser());
@@ -183,7 +183,9 @@ We also strongly recommend using the [problem middleware][problem] to
 automatically convert these errors to standard `application/problem+json`
 responses.
 
-Next up: learn about the [controller][controller] to better organize your code.
+
+{:.note.good}
+> Next up: learn about the [controller][controller] to better organize your code.
 
 
 [1]: https://github.com/curveball/kernel/tree/main/src
