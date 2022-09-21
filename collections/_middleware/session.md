@@ -155,7 +155,8 @@ interface SessionStore {
 }
 ```
 
-`SessionValues` is simply a key->value object. `expire` is expressed as a unix
+{:.note}
+>`SessionValues` is simply a key->value object. `expire` is expressed as a unix
 timestamp.
 
 [1]: https://github.com/curveball/
