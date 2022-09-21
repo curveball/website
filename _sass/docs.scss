@@ -1,6 +1,7 @@
 .docs-page-wrapper {
   display: flex;
   flex-direction: row;
+  background: white;
 
   & > input[name="sidebar-toggle"] {
     display: none;
