@@ -53,25 +53,25 @@ app.listen(4000);
 In Curveball (like Koa) _everything_ is a middleware, so to respond to a request
 you use the `.use()` method.
 
-When this method gets called, you are given a `ctx` argument. This is an object
-that contains all the information about the HTTP request (`ctx.request`) and
-the response (`ctx.response`).
-
-{:.note.suggestion}
-> The `.use()` method requires a `ctx` object as (its) argument. The `ctx` object
+The `.use()` method requires a `ctx` object as its argument. This `ctx` object
 contains all the information about the HTTP request and
 the response, accessible via `ctx.request` and `ctx.response`.
 
-
 In this case we are setting the reponse `body` to contain an object.
-```js
+
+```typescript
 ctx.response.body = {msg: 'Hello world!'}
 ``` 
 
+{:.note.info}
 By default this will be turned into a JSON string.
 
+--- 
+
+<!-- 
 {:.note.suggestion}
->'this' ☝ is a bit vague. Is it significant to mention here? Are all curveball responses JSON by default? Consider adding a `.note.hint` like "(Did you know,) All Curveball responses are JSON by default btw (?)"
+>'this' ☝ is a bit vague. Is it significant to mention here? Are all curveball responses JSON by default? Consider adding a `.note.hint` like "(Did you know,) All Curveball responses are JSON by default btw (?)" 
+-->
 
 
 Lastly, call `listen()` to listen on a specific TCP port. 
