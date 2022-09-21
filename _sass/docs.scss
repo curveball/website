@@ -25,6 +25,13 @@
 .docs-page-wrapper .docs-navbar {
   background: rgb(245, 245, 247);
   min-width: 16rem;
+  
+  .navbar-sticky-wrapper {
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    position: sticky;
+    top: 60px;
+  }
 }
 
 .docs-container {
