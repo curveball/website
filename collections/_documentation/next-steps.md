@@ -53,14 +53,15 @@ at the [source][1] to see what's available.
 
 ## Useful middleware
 
-2 middlewares you'll pretty much always want.
+2 middlewares you'll pretty much always want: 
+
+* **[accesslog]** &ndash; makes your terminal output and server logs more useful
+* **[bodyparser]** &ndash; will let you read request bodies
+
 
 ```
 npm i @curveball/accesslog @curveball/bodyparser
 ```
-
-Accesslog makes your terminal output and server logs more useful, and
-bodyparser will let you read request bodies.
 
 This is how you use them:
 
@@ -80,7 +81,7 @@ app.use(bodyParser);
 
 ## A route and a GET request
 
-Now that the basics are covered, lets make a simple fake API that returns some
+Now that the basics are covered, let's make a simple fake API that returns some
 data given a specific path.
 
 This API responds to `GET /article/:id` and returns a JSON article that repeats
@@ -111,8 +112,10 @@ app.use(router.get('/article/:id', async ctx => {
 // engine-specific code here
 ```
 
-{:.note.hint}
-> On **lambda** or **bun** use **`@curveball/kernel`** instead of `@curveball/core`
+{:.note.info}
+On **lambda** or **bun** use **`@curveball/kernel`** instead of `@curveball/core`
+
+---
 
 By default Curveball will respond with `200 OK` _if_ a response body was set.
 It also defaults the `Content-Type` to `application/json`.
@@ -194,8 +197,8 @@ responses.
 [bun]: /docs/bun
 [lambda]: /docs/aws-lambda
 [azure]: /docs/azure-functions
-
-[bodyparser]: /docs/middleware/bodyparser
+[accesslog]: /docs/middleware/access-logs
+[bodyparser]: /docs/middleware/body-parser
 [http-errors]: https://github.com/curveball/http-errors
 [problem]: /docs/middleware/problem
 [controller]: /docs/controller
