@@ -23,7 +23,7 @@ The service
 -----------
 
 To support this article API, we're making a very basic 'service' that handles
-retrieval and storage. Let's assume this exists in a 'article-service.ts' file.
+retrieval and storage. Let's assume this exists in a file called `article-service.ts`.
 
 
 ```typescript
@@ -83,18 +83,18 @@ export function create(article: Omit<Article, 'id'>): Article {
 ```
 
 The above functions are a very rudimentary way to store an article in memory. You are free to use your own ORMs,
-datamappers and patterns for this. The main purpose of this code is these are a set of functions that manage an
-array of `Article`.
+datamappers and patterns for this. The main purpose of this code is to have a set of functions that manage an
+array of `Article`s.
 
 The controllers
 ---------------
 
 As discussed earlier, we have 5 operations and we have 2 routes representing them:
 
-* `/articles` - To get the list and create new articles
-* `/articles/:id` - To read, update and delete a specific article.
+* `/articles` &ndash; to get the list and create new articles
+* `/articles/:id` &ndash; to read, update and delete a specific article
 
-Curveball routing and controllers are resource-based. Curveball wants you do build a
+Curveball routing and controllers are resource-based. Curveball wants you to build a
 separate controller for each route.
 
 This is ths 'articles' controller:
@@ -130,7 +130,8 @@ class ArtcileCollection extends Controller {
 As you can see above, methods in the controller present HTTP methods. `post()`
 will be automatically called for the `HTTP POST` method.
 
-Note that all methods here were marked `async`. It wasn't needed here, but
+{:.note.hint}
+> Note that all methods here were marked `async`. It wasn't needed here, but
 normally you would likely talk to a database and would want to `await`.
 
 Let's take a look at the Article controller:

@@ -16,7 +16,7 @@ HTML. Browsers do this by sending an `Accept: text/html` header.
 If this middleware spots this, it will kick in and auto-generate a great looking
 HTML document.
 
-If this header was not provides, this middleware does nothing.
+If this header was not provided, this middleware does nothing.
 
 It automatically decorates the following formats:
 
@@ -152,30 +152,30 @@ app.use(browser({});
 The halBrowser function takes an options object, which can take the following
 settings:
 
-* `title` - Change the main title.
-* `theme` - `curveball` by default, but `lfo` and `spicy-oj` are also provided.
-* `stylesheets` - Provide your own stylesheets. This is an array of strings.
+* `title` &ndash; Change the main title.
+* `theme` &ndash; Default theme is `curveball`, but `lfo` and `spicy-oj` are also provided.
+* `stylesheets` &ndash; Provide your own stylesheets. This is an array of strings.
   these are relative urls, and they are automatically expanded based on the
   `assetBaseUrl` setting.
-* `navigationLinks` - Specify (or remove) links that show up in the top
+* `navigationLinks` &ndash; Specify (or remove) links that show up in the top
   navigation.
-* `serveAssets` - by default the browser plugin will also take responsibility
+* `serveAssets` &ndash; by default the browser plugin will also take responsibility
   for serving icons and stylesheet. If you're hosting these assets elsewhere,
   set this to `false`.
-* `defaultLinks` - A list of links that will show up by default, whether or not
+* `defaultLinks` &ndash; A list of links that will show up by default, whether or not
   they were specified by the API. By default a `home` link is added here.
-* `hiddenRels` - List of relationship types that will be hidden from the user by
+* `hiddenRels` &ndash; List of relationship types that will be hidden from the user by
   default. This can be used for links that are simply not interesting for a human
   to see. (default: `['self', 'curies']`.
-* `fullBody` - If turned on, full JSON bodies are always rendered. This can also
+* `fullBody` &ndash; If turned on, full JSON bodies are always rendered. This can also
   be turned on during runtime by adding a `?_browser-fullbody` query parameter.
-* `allLinks` - By default the Browser will hide links from the 'Links' table
+* `allLinks` &ndash; By default the Browser will hide links from the 'Links' table
   that will be rendered as 'navigation buttons', forms (templated links), or are
   considered special (the 'self' link). While this might be a nicer interface
   for an average user browsing the hypermedia graph, as a developer you might
   just want to see all the links.
 
-Example:
+### Example
 
 ```javascript
 app.use(browser({

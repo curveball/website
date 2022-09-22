@@ -15,6 +15,10 @@ bun -v
 If this gave you an error, head over to the [Bun documentation][bun] first
 and install bun.
 
+{:.note}
+> Most of the documentation assumes you use the `npm` package manager
+to install additional packages, but if you are a `bun` user you should probably
+use `bun install` instead.
 
 ## Installation
 
@@ -65,11 +69,6 @@ bun run src/app.ts
 
 After this command you can go to <http://localhost:4000> to see if it worked.
 
-
-{:.note}
-> Most of the documentation assumes you use the `npm` package manager
-to install additional packages, but if you are a `bun` user you should probably
-use `bun install` instead.
 
 {:.note.good}
 > Now we've covered the Bun-specific documentation, go read [next steps][2] to

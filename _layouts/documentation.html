@@ -95,11 +95,7 @@ menu:
 			<h1>{{ page.title }}</h1>
 			
 			{% if page.description %}
-			<h4 id="page-description"> {{ page.description }}</h4>
-			{% endif %}
-
-			{% if page.repo %}
-			<a href="{{ page.repo }}" target="_blank" class="button alternate">Github repo <span class="genericon genericon-external"></span></a>
+			<h4 id="page-description"><strong>{{ page.description }}</strong></h4>
 			{% endif %}
 
 		</div>
@@ -109,6 +105,9 @@ menu:
 			</div>
 			<div class="page-nav-container">
 				<nav>
+					{% if page.repo %}
+					<a href="{{ page.repo }}" target="_blank" class="button alternate">Github repo <span class="genericon genericon-external"></span></a>
+					{% endif %}
 					<h5>On this Page</h5>
 					<ul>
 						{% if page.nav-links %}

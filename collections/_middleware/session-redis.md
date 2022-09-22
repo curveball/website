@@ -55,8 +55,9 @@ app.use(session({
 });
 ```
 
-`clientOptions` is the set of options for the Redis client. The list of
-available `clientOptions` can be found on the [NodeRedis/node_redis][1]
+{:.note}
+> `clientOptions` is the set of options for the Redis client. <br>The list of
+all available `clientOptions` can be found on the [NodeRedis/node_redis][1]
 repository.
 
 Instead of passing `clientOptions`, it's also possible to pass a fully setup
