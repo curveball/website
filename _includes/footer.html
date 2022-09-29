@@ -32,5 +32,37 @@
     for (const a of externalLinks) {
       a.setAttribute('target', '_blank');
     }
+
+    const themeInputs = document.querySelectorAll('input[name="theme"]');
+    
+    for (const input of themeInputs) {
+      input.addEventListener('change', (e) => {
+        updateColorSchemePrefs(e.target.value);
+      });
+    }
+
+    function updateColorSchemePrefs(selectedtheme) {
+      let theme = null;
+
+      if(selectedtheme) {
+        theme = selectedtheme;
+      } else if (localStorage.getItem('theme')) {
+        theme = localStorage.getItem('theme');
+      }
+
+      if (theme !== null) {
+        localStorage.setItem('theme', theme);
+        document.body.dataset['theme'] = localStorage.getItem('theme');
+        document.querySelector(`input[name=theme][value=${theme}]`).checked = 'checked';
+      } else {
+          if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            updateColorSchemePrefs('dark');
+          }
+      }
+    }
+
+    updateColorSchemePrefs();
+    
+
   </script>
 </footer>
