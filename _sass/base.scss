@@ -546,7 +546,7 @@ blockquote {
   margin: 3rem auto 3rem 0;
   padding: 1rem;
   display: flex;
-  gap: 1rem;
+  gap: 18px;
   border-radius: 0.4ex;
   border-width: 1px;
   border-style: solid;
@@ -577,7 +577,7 @@ blockquote {
     font-family: 'Genericons';
     border-width: 0 2px 0 0;
     font-size: 1.2em;
-    padding: 0 .7ex 0 0;
+    padding: 0 16px 0 0;
     vertical-align: middle;
     color: var(--accent-color, #777);
   }
@@ -635,10 +635,11 @@ blockquote {
 
   &.help {
     &::before {
-      --accent-color: #ff4e60;
+      --accent-color: #006699;
       content: '\f457';
     }
   }
+
   &.hint {
     &::before {
       --accent-color: #ff4e60;
@@ -655,8 +656,9 @@ blockquote {
   
   &.warning {
     &::before {
-      --accent-color: #ff4e60;
-      content: '\f456';
+      --accent-color: #ff9600;
+      --accent-color: #ffaf50;
+      content: '\f414';
     } 
   }
   
