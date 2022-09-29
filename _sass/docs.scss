@@ -9,7 +9,7 @@
     & + label {
       display: none;
       padding: 0 .8em;
-      position: fixed;
+      position: sticky;
       top: 85vh;
       left: .5rem;
       z-index: 2;
@@ -224,7 +224,7 @@
   box-shadow: inset 0 0 0 1px currentColor;
 }
 
-/* Mobile styles */
+/* Mobile styles: Docs */
 @media only screen and (max-width: 1080px) {
   .docs-page-wrapper {
 
@@ -246,6 +246,23 @@
       transform: translateX(-100%);
       transition: all .2s cubic-bezier(.65,.05,.36,1);
       z-index: 1;
+      
+      .navbar-sticky-wrapper {
+        padding-bottom: 6rem;
+      }
+
+      details summary {
+        padding-left: 3rem;
+        line-height: 4rem;
+        &::after {
+          left: 1ex;
+          top: 1.3ex;
+        }
+      }
+
+      a {
+        padding: 1ex 2ex;
+      }
     }
 
     /* SIDEBAR TOGGLE SYSTEM */
