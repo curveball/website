@@ -34,10 +34,20 @@
     strong {
       color: black;
     }
-
+    img {
+      filter: invert(1);
+    }
   }
   
   .special.cta {
     border-bottom-color: var(--purple-800);
+  }
+
+  .note {
+    --accent-color: white;
+    &::before,
+    &::after {
+      filter: invert(1);
+    }
   }
 }
