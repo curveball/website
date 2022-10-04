@@ -54,10 +54,10 @@
         localStorage.setItem('theme', theme);
         document.body.dataset['theme'] = localStorage.getItem('theme');
         document.querySelector(`input[name=theme][value=${theme}]`).checked = 'checked';
-      } else {
-          if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             updateColorSchemePrefs('dark');
-          }
+      } else {
+        updateColorSchemePrefs('light');
       }
     }
 
