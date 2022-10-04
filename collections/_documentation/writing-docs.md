@@ -89,6 +89,15 @@ This paragraph indicates discussion.
 {:.note.comment}
 > This blockquotes indicates discussion.
 
+**`.note.help`**
+
+{:.note.help}
+A sign showing people where they can find help
+
+{:.note.help}
+> In case you got lost please checkout [this other document](#)
+
+
 **`.note.hint`**
 
 {:.note.hint}
@@ -114,14 +123,6 @@ Use **`.info`**  for stuff you want to point out, but differently.
 > _If any of these concepts are foreign, this documentation is **likely not** a good
 jumping off point._
 
-**`.note.good`**
-
-{:.note.good}
-**Encouraged** &ndash; Tips, best practices etc
-
-{:.note.good}
-> Please dumb at municipal waste processing plant please.
-
 **`.note.bad`**
 
 {:.note.bad}
@@ -129,6 +130,14 @@ jumping off point._
 
 {:.note.bad}
 > Not dumb here. Please do not dumb here.
+
+**`.note.good`**
+
+{:.note.good}
+**Encouraged** &ndash; Tips, best practices etc
+
+{:.note.good}
+> Please dumb at municipal waste processing plant please.
 
 **`.note.fixme`**
 
