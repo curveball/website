@@ -1,13 +1,16 @@
 <head>
+	{% capture canonical %}{{ site.url }}{{ site.baseurl }}{% if site.permalink contains '.html' %}{{ page.url }}{% elsif site.permalink contains category_dir %}{{ '/' | page.url | remove:'index.html' | '/' }}{% else %}{{ page.url | remove:'index.html' | '/' }}{% endif %}{% endcapture %}
 	<meta charset="utf-8">
 	<link rel="canonical" href="{{ canonical }}" />
-	<meta name="description" content="{% if page.quote %}{{ page.quote }}{% else %}{{ page.content | strip_html | truncatewords: 20 }}{% endif %}" />
-	<meta property="og:description" content="{% if page.quote %}{{ page.quote }}{% else %}{{ page.content | strip_html | truncatewords: 20 }}{% endif %}" />
+	{% if page.description %}
+	<meta name="description" content="{{ page.description | strip_html | truncatewords: 20 }}" />                                                                                                      
+	<meta property="og:description" content="{{ page.description | strip_html | truncatewords: 20 }}" />
+	{% endif %}
 	<meta itemprop="image" content="{% if page.image.url %}{{ site.baseurl }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.icon }}{% endif %}" />
 	<meta property="og:image" content="{% if page.image.url %}{{ site.baseurl }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.icon }}{% endif %}" />
-	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:title" content="{{ site.title page.title }}" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="{{ canonical }}" />
+	<meta property="og:url" content="{{ site.url }}{{ page.url | replace:'index.html',''}}" />
 	<meta property="og:site_name" content="{{ site.title }}" />
 	<title>{% if page.title == "Home" %}{{ site.title }} &middot; {{ site.tagline }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}</title>
 	<meta name="mobile-web-app-capable" content="yes">

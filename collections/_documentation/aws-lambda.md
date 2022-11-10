@@ -2,6 +2,7 @@
 layout: documentation
 title: AWS Lambda
 permalink: /docs/aws-lambda
+description: Run Curveball on AWS Lambda
 ---
 
 Curveball runs natively on AWS lambda, but we do recommend getting some
