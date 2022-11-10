@@ -2,12 +2,10 @@
 	{% capture canonical %}{{ site.url }}{{ site.baseurl }}{% if site.permalink contains '.html' %}{{ page.url }}{% elsif site.permalink contains category_dir %}{{ '/' | page.url | remove:'index.html' | '/' }}{% else %}{{ page.url | remove:'index.html' | '/' }}{% endif %}{% endcapture %}
 	<meta charset="utf-8">
 	<link rel="canonical" href="{{ canonical }}" />
-	
 	{% if page.description %}
 	<meta name="description" content="{{ page.description | strip_html | truncatewords: 20 }}" />                                                                                                      
 	<meta property="og:description" content="{{ page.description | strip_html | truncatewords: 20 }}" />
 	{% endif %}
-
 	<meta itemprop="image" content="{% if page.image.url %}{{ site.baseurl }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.icon }}{% endif %}" />
 	<meta property="og:image" content="{% if page.image.url %}{{ site.baseurl }}{{ page.image.url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.icon }}{% endif %}" />
 	<meta property="og:title" content="{{ site.title page.title }}" />
