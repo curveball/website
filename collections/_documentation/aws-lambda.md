@@ -28,7 +28,7 @@ Lambda.
 Get the NPM packages
 
 ```sh
-npm install @curveball/kernel @curveball/aws-lamba
+npm install @curveball/kernel @curveball/aws-lambda
 npm install --dev @types/aws-lambda
 ```
 
