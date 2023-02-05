@@ -103,9 +103,9 @@ This is ths 'articles' controller:
 ```typescript
 import { Controller } from '@curveball/controller';
 import { Context } from '@curveball/kernel';
-import { Article, findAll, create } as articleService from './article-service';
+import { Article, findAll, create } from './article-service';
 
-class ArtcileCollection extends Controller {
+class ArticleCollection extends Controller {
 
   async get(ctx: Context) {
     ctx.response.body = findAll();
@@ -140,7 +140,7 @@ Let's take a look at the Article controller:
 ```typescript
 import { Controller } from '@curveball/controller';
 import { Context } from '@curveball/kernel';
-import { Article, find, update, remove } as articleService from './article-service';
+import { Article, find, update, remove } from './article-service';
 
 class ArticleItem extends Controller {
 
@@ -152,7 +152,7 @@ class ArticleItem extends Controller {
   async put(ctx: Context) {
 
     const article = find(+ctx.params.id);
-    const newArrticle: Article = {
+    const newArticle: Article = {
       ..article,
       // In real life, please validate
       ctx.request.body
@@ -180,15 +180,15 @@ Putting it all together
 
 
 ```typescript
-import { Application } from '@curveball/core'; // on lambda or bun this is 'kernel'
+import { Application } from '@curveball/kernel';
 import accessLog from '@curveball/accesslog';
 import bodyParser from `@curveball/bodypaser`;
 import problem from '@curveball/problem';
 
-const app = Application();
+const app = new Application();
 
 app.use(accessLog);
-app.use(v$accessLog);
+app.use(problem);
 app.use(bodyparser);
 
 const routes = [
