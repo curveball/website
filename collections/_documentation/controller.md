@@ -97,7 +97,7 @@ As discussed earlier, we have 5 operations and we have 2 routes representing the
 Curveball routing and controllers are resource-based. Curveball wants you to build a
 separate controller for each route.
 
-This is ths 'articles' controller:
+This is the 'articles' controller:
 
 
 ```typescript
@@ -152,13 +152,13 @@ class ArticleItem extends Controller {
   async put(ctx: Context) {
 
     const article = find(+ctx.params.id);
-    const newArticle: Article = {
+    const updatedArticle: Article = {
       ..article,
       // In real life, please validate
       ctx.request.body
     };
 
-    const newArticle = update(article);
+    update(updatedArticle);
     ctx.status = 204;
 
   }
@@ -187,9 +187,9 @@ import problem from '@curveball/problem';
 
 const app = new Application();
 
-app.use(accessLog);
-app.use(problem);
-app.use(bodyparser);
+app.use(accessLog());
+app.use(problem());
+app.use(bodyparser());
 
 const routes = [
   router('/articles', new ArticleCollection()),
